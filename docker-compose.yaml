@@ -1,0 +1,82 @@
+# Execute the following code to spin up the containers
+# docker compose up -d
+# Execute the following code to spin down the docker compose file:
+# docker compose down
+
+version: '3.8'
+
+services:
+  db:
+    container_name: postgres
+    restart: always
+    image: postgres:latest
+    expose:
+      - '${DB_PORT}:5432'
+    environment:
+      POSTGRES_DB: jdbc:postgresql://db:5432/postgres
+      POSTGRES_USER: ${AIV_DB_USER}
+      POSTGRES_PASSWORD: ${AIV_DB_PASSWORD}
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+    ports:
+      - '${DB_PORT}:5432'
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - '${PGADMIN_PORT}:80'
+    depends_on:
+      - db
+  aiv: 
+    container_name: aiv
+    image: jits023/aiv-jira:6.0.0
+    ports: 
+      - "9090:8080"
+    depends_on:
+      - db
+    environment:
+      aiv_port: 8080
+      aiv_base: /opt
+      aiv_db_url: jdbc:postgresql://db:5432/postgres
+      aiv_db_user: ${AIV_DB_USER}
+      aiv_db_password: ${AIV_DB_PASSWORD}
+      security_db_url: jdbc:postgresql://db:5432/postgres?currentSchema=security
+      security_db_user: ${AIV_DB_USER}
+      security_db_password: ${AIV_DB_PASSWORD}
+      jira_db_url: jdbc:postgresql://db:5432/jiraTest
+      jira_db_user: ${AIV_DB_USER}
+      jira_db_password: ${AIV_DB_PASSWORD}
+      addon_base_url: http://localhost:8080/aiv
+      atlassian_url: https://app.atlassian.net
+    volumes:
+      - ./config:/opt/config
+      - ./repository:/opt/repository
+      - ./logs:/opt/logs
+    restart: always
+  aiv-ai: 
+    container_name: aiv-ai
+    image: jits023/aiv-ai:6.0.0
+    ports: 
+      - "8000:8000"
+    environment:
+      - AIV_JUPYTER=aiv-jupyter
+      - AIV_TOKEN=aivhub
+    depends_on:
+      - aiv-jupyter
+    volumes:
+      - "./dataloc/:/usr/local/temp/"
+    restart: always
+  aiv-jupyter: 
+    container_name: aiv-jupyter
+    image: jits023/aiv-jupyter:6.0.0
+    ports: 
+      - "8888:8888"
+    volumes:
+      - "./dataloc/:/usr/local/temp/"
+    environment:
+      - AIV_JUPYTER=aiv-jupyter
+    restart: always

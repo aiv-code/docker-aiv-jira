@@ -1,0 +1,1806 @@
+{
+   "general":{
+      "checked":true,
+	  "tempChecked": true,
+      "description":"General Configurations",
+      "properties":[
+         {
+            "name":"lazyLoadHardLimit",
+            "displayName":"Lazy Load Hard Limit",
+            "defaultValue":"500",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"help_url",
+            "displayName":"Base Help URL",
+            "defaultValue":"https://v6.docs.aivhub.com/aiv/",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"share_url",
+            "displayName":"Base Share URL",
+            "defaultValue":"http://localhost:8080/aiv",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"data_preview_limit",
+            "displayName":"Data Preview Limit",
+            "defaultValue":500,
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"session_timeout",
+            "displayName":"Session Timeout (in minutes)",
+            "defaultValue":20,
+            "required":true,
+            "type":"text",
+            "placeholder":"Session timeout in minutes"
+         },
+         {
+            "name":"server_port",
+            "displayName":"Server Port",
+            "defaultValue":8080,
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"backup_os",
+            "displayName":"Backup OS",
+            "defaultValue":"windows",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"database_name",
+            "displayName":"Backup Database Name",
+            "defaultValue":"aiv",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"external_url",
+            "displayName":"Notebook External URL",
+            "defaultValue":"http://localhost:5000/execute",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"kernel_ip",
+            "displayName":"Kernel IP",
+            "defaultValue":"://localhost:8888/api/",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"auth_token",
+            "displayName":"Auth Token",
+            "defaultValue":"aivhub",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"supported_lang",
+            "displayName":"Suppoted Languages (In Serverside Scripts)",
+            "defaultValue":"python3",
+            "type":"text",
+            "placeholder":"Session timeout in minutes"
+         },
+         {
+            "name":"data_dump_loc",
+            "displayName":"External Data Dump Location",
+            "defaultValue":"/opt/dloc",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"param_message",
+            "displayName":"Parameter Message",
+            "defaultValue":"Parameters marked with * are requireds.",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"param_message_date",
+            "displayName":"Parameter Date Message",
+            "defaultValue":"Enter value in format :",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"salt_key",
+            "displayName":"Salt",
+            "defaultValue":"Activeintelligence",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"date_format",
+            "displayName":"Date Format",
+            "defaultValue":"yyyy-MM-DD HH:mm:ss",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"temp_store",
+            "displayName":"Temporary Storage",
+            "defaultValue":"C:/AIS/execution/",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"birtLocale",
+            "displayName":"Birt Locale",
+            "defaultValue":"en",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"adhoc_debug",
+            "displayName":"Adhoc debug or not",
+            "defaultValue":false,
+            "type":"radio",
+            "values":[
+               {
+                  "key":false,
+                  "value":false
+               },
+               {
+                  "key":true,
+                  "value":true
+               }
+            ],
+            "placeholder":"Editable User Properties"
+         },
+         {
+            "name":"allowedHeaders",
+            "displayName":"Allow Headers",
+            "defaultValue":"ep,archivemode,action,category,id,auth-token,brtm,Content-Type,dc,local_owner,logs_category,owner,owner_roles,notificationCount,referer,roles,section,timezone,token,username,vdc,x-xsrftoken,groupId,status,recurringId,eb,pwdFlag,name,User-Agent,type.newName,oldName,newKey,oldKey,groupName,startDate,endDate,userType,reportId,fileType,fileId,dm_id,messageFor,dbKey,pt,types,outputTypes,notiFor,curr_defId,new_defId,widgetId,privilegeId,dashboardId,notificationId,type,name,ename,notificationId,newName",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"cacheTimeout",
+            "displayName":"Cache Timeout(in days)",
+            "defaultValue":30,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"cacheSize",
+            "displayName":"Cache Size",
+            "defaultValue":100,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"excelexport",
+            "displayName":"Excel Url",
+            "defaultValue":"http://localhost:8080/AEE/xlsx_export",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"pipeLineMax",
+            "displayName":"Max Jobs",
+            "defaultValue":"1000",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"pipeLineResultStore",
+            "displayName":"Max Result Store(In Seconds)",
+            "defaultValue":"600",
+            "required":true,
+            "type":"text",
+            "placeholder":""
+         },
+    {
+      "name" : "aikey",
+      "displayName" : "Open AI Key",
+      "defaultValue" : "",
+      "required" : false,
+      "type" : "text",
+      "placeholder" : ""
+    }, {
+      "name" : "aitoken",
+      "displayName" : "Open AI Token",
+      "defaultValue" : "1000",
+      "required" : false,
+      "type" : "text",
+      "placeholder" : ""
+    }, {
+      "name" : "aiengine",
+      "displayName" : "Open AI Engine",
+      "defaultValue" : "gpt-3.5-turbo",
+      "required" : false,
+      "type" : "text",
+      "placeholder" : ""
+    }  
+      ]
+   },
+   "cluster":{
+      "checked":false,
+      "description":"AIV Clustering",
+      "properties":[
+         {
+            "name":"cname",
+            "displayName":"Cluster Name",
+            "defaultValue":"AIV",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"name",
+            "displayName":"Instance Name",
+            "defaultValue":"AIV",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"ip",
+            "displayName":"Ip Address of Server",
+            "defaultValue":"localhost:5701",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"portrange",
+            "displayName":"Port Range",
+            "defaultValue":"5703-5720",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"totalTasks",
+            "displayName":"Total Tasks",
+            "defaultValue":10,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"maxbackoff",
+            "displayName":"Max backoff time",
+            "defaultValue":60000,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"multiplier",
+            "displayName":"Multiplier",
+            "defaultValue":2,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"connectiontimeout",
+            "displayName":"Connection timeout",
+            "defaultValue":5000,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"heartbeatinterval",
+            "displayName":"Interval",
+            "defaultValue":"5000",
+            "type":"text",
+            "placeholder":""
+         }
+      ]
+   },
+   "email":{
+      "checked":false,
+      "description":"Email Configuration",
+      "properties":[
+         {
+            "name":"smtp_host",
+            "displayName":"SMTP Host",
+            "defaultValue":"smtp.gmail.com",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"smtp_port",
+            "displayName":"SMTP Port",
+            "defaultValue":"587",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"username",
+            "displayName":"Username",
+            "defaultValue":"",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"password",
+            "displayName":"Password",
+            "defaultValue":"",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"ssl",
+            "displayName":"SSL",
+            "defaultValue":false,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"tls",
+            "displayName":"TLS",
+            "defaultValue":false,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"sender_name",
+            "displayName":"Sender Name",
+            "defaultValue":"AIV System Generated",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"sender_email",
+            "displayName":"Sender Email",
+            "defaultValue":"system@emailserver.com",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"email_looping",
+            "displayName":"Email Looping",
+            "defaultValue":false,
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"auth_req",
+            "displayName":"Auth Req",
+            "defaultValue":true,
+            "type":"text",
+            "placeholder":""
+         }, {
+            "name" : "isProtocol",
+            "displayName" : "Protocol Required",
+            "defaultValue" : "false",
+            "type" : "text",
+            "placeholder" : ""
+         }, {
+            "name" : "protocol",
+            "displayName" : "Protocols",
+            "defaultValue" : "TLSv1.2 TLSv1.3",
+            "type" : "text",
+            "placeholder" : ""
+         }
+      ]
+   },
+   "report_messages":{
+      "checked":true,
+	  "tempChecked": true,
+      "description":"Report Display Messages",
+      "properties":[
+         {
+            "name":"pageRangeMsg",
+            "displayName":"Out of Range Message",
+            "defaultValue":"Page is out of range.",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"Blankpage",
+            "displayName":"Missing Page Number",
+            "defaultValue":"Please enter page number.",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"ValidPageNo",
+            "displayName":"Enter Valid Page Number",
+            "defaultValue":"Please enter valid page number",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"ValidPageRange",
+            "displayName":"Enter Valid Page Range",
+            "defaultValue":"Please enter valid page range",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"NoParam",
+            "displayName":"No Parameters",
+            "defaultValue":"There are no parameters for report.",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"ErrorMsg",
+            "displayName":"Error Message",
+            "defaultValue":"Error processing your request, Please try again later...",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"noToc",
+            "displayName":"No Table of Content",
+            "defaultValue":"The report does not have any table of content.",
+            "type":"text",
+            "placeholder":""
+         }
+      ]
+   },
+   "birt_config":{
+      "checked":true,
+	  "tempChecked": true,
+      "description":"BIRT Configurations",
+      "properties":[
+         {
+            "name":"execution_maxtime",
+            "displayName":"Report Maximum Execution Time (in minutes)",
+            "defaultValue":"30",
+            "type":"text",
+            "placeholder":""
+         },
+         {
+            "name":"log_level",
+            "displayName":"BIRT Log Level",
+            "defaultValue":"SEVERE",
+            "type":"select",
+            "values":[
+               {
+                  "key":"SEVERE",
+                  "value":"SEVERE"
+               },
+               {
+                  "key":"OFF",
+                  "value":"OFF"
+               },
+               {
+                  "key":"WARNING/900",
+                  "value":"WARNING"
+               },
+               {
+                  "key":"INFO/800",
+                  "value":"INFO"
+               },
+               {
+                  "key":"CONFIG/700",
+                  "value":"CONFIG"
+               },
+               {
+                  "key":"FINE/500",
+                  "value":"FINE"
+               },
+               {
+                  "key":"FINER/400",
+                  "value":"FINER"
+               },
+               {
+                  "key":"FINEST/300",
+                  "value":"FINEST"
+               },
+               {
+                  "key":"ALL",
+                  "value":"ALL"
+               }
+            ],
+            "placeholder":"Select OFF, SEVERE/1000, WARNING/900, INFO/800, CONFIG/700, FINE/500, FINER/400, FINEST/300, ALL"
+         }
+      ]
+   },
+   "sso":{
+      "checked":false,
+	  "tempChecked": false,
+      "description":"SSO Configuration",
+      "properties":[
+         {
+            "name":"sso_class_name",
+            "displayName":"Class Name",
+            "defaultValue":"",
+            "type":"text"
+         },
+         {
+            "name":"sso_error_msg",
+            "displayName":"Error Message",
+            "defaultValue":"Wrong credentials for SSO",
+            "type":"text"
+         }
+      ]
+   },
+   "security":{
+      "checked":false,
+	  "tempChecked": false,
+      "description":"External Security",
+      "properties":[
+         {
+            "name":"user_access",
+            "displayName":"Editable User Properties",
+            "defaultValue":"Editable",
+            "type":"radio",
+            "values":[
+               {
+                  "key":"Editable",
+                  "value":"Editable"
+               },
+               {
+                  "key":"Secure",
+                  "value":"Secure"
+               }
+            ],
+            "placeholder":"Editable User Properties"
+         },
+         {
+            "name":"role_access",
+            "displayName":"Editable Roles Properties",
+            "defaultValue":"Editable",
+            "type":"radio",
+            "values":[
+               {
+                  "key":"Editable",
+                  "value":"Editable"
+               },
+               {
+                  "key":"Secure",
+                  "value":"Secure"
+               }
+            ],
+            "placeholder":"Editable Roles Properties"
+         },
+         {
+            "name":"class_name",
+            "displayName":"Security class name",
+            "defaultValue":"",
+            "type":"text",
+            "placeholder":"Enter class name"
+         },
+         {
+            "name":"refresh_time",
+            "displayName":"Refresh External Security (in minutes)",
+            "defaultValue":"-1",
+            "type":"text",
+            "placeholder":"Refresh time in minutes"
+         },
+         {
+            "name":"load_on_startup",
+            "displayName":"Refresh External Security on Server Startup",
+            "defaultValue":true,
+            "type":"text",
+            "placeholder":"Refresh External Security on Server Startup"
+         },
+         {
+            "name":"admin_users",
+            "displayName":"Admin Users",
+            "defaultValue":"",
+            "type":"text",
+            "placeholder":"Comma seperated usernames"
+         },
+         {
+            "name":"admin_roles",
+            "displayName":"Admin Roles",
+            "defaultValue":"",
+            "type":"text",
+            "placeholder":"Comma seperated role names"
+         }
+      ],
+      "user_default":{
+         "checked":false,
+		 "tempChecked": false,
+         "description":"User Defaults",
+         "properties":[
+            {
+               "name":"homeFolder",
+               "displayName":"Home Folder",
+               "defaultValue":"0",
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"backupUserId",
+               "displayName":"Backup User Id (for internal users)",
+               "defaultValue":"0",
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"managerUserId",
+               "displayName":"Manager User Id (for external users)",
+               "defaultValue":"0",
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"dashboardOption",
+               "displayName":"Dashboard Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"alertsOption",
+               "displayName":"Alert Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"reportOption",
+               "displayName":"Report Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"mergeReportOption",
+               "displayName":"Merge Report Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"adhocOption",
+               "displayName":"Adhoc Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"resourceOption",
+               "displayName":"Shared Resource Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"quickRunOption",
+               "displayName":"Quick Run Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"mappingOption",
+               "displayName":"Dataset Mapping Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"messageOption",
+               "displayName":"Dynamic Message Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"datasetOption",
+               "displayName":"Dataset Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"parameterOption",
+               "displayName":"Parameter Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"annotationOption",
+               "displayName":"Annotation Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"notificationOption",
+               "displayName":"Notification Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"requestOption",
+               "displayName":"Request Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"adminOption",
+               "displayName":"Admin Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"scheduleOption",
+               "displayName":"Schedule Report Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"userType",
+               "displayName":"User Type",
+               "defaultValue":"INT",
+               "required":true,
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"default_Dashboard",
+               "displayName":"Default Dashboard",
+               "defaultValue":"0",
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"landing_Page",
+               "displayName":"Landing Page",
+               "defaultValue":"/controlpanel",
+               "type":"select",
+               "values":[
+                  {
+                     "key":"Dashboard",
+                     "value":"Visualization/GridDashboard"
+                  },
+                  {
+                     "key":"Reports",
+                     "value":"Documents/Reports"
+                  },
+                  {
+                     "key":"MergeReports",
+                     "value":"Documents/MergeReports"
+                  },
+                  {
+                     "key":"ReportOnTheFlyGrid",
+                     "value":"Documents/GridReportOnTheFly"
+                  },
+                  {
+                     "key":"AdhocReport",
+                     "value":"Documents/AdhocReport"
+                  },
+                  {
+                     "key":"QuickRun",
+                     "value":"Documents/QuickRun"
+                  },
+                  {
+                     "key":"Messages",
+                     "value":"Documents/Messages"
+                  },
+                  {
+                     "key":"Datasets",
+                     "value":"MasterData/Datasets"
+                  },
+                  {
+                     "key":"Parameters",
+                     "value":"MasterData/Parameters"
+                  },
+                  {
+                     "key":"Annotation",
+                     "value":"Annotation"
+                  },
+                  {
+                     "key":"Notifications",
+                     "value":"Request/Notifications"
+                  },
+                  {
+                     "key":"Request",
+                     "value":"Request/Request"
+                  },
+                  {
+                     "key":"Repository",
+                     "value":"Administration/Repository"
+                  },
+                  {
+                     "key":"Users",
+                     "value":"Administration/Users"
+                  },
+                  {
+                     "key":"Roles",
+                     "value":"Administration/Roles"
+                  }
+               ]
+            },
+            {
+               "name":"locale",
+               "displayName":"Locale",
+               "defaultValue":"en",
+               "type":"select",
+               "values":[
+                  {
+                     "value":"ar",
+                     "key":"Arabic"
+                  },
+                  {
+                     "value":"de",
+                     "key":"German"
+                  },
+                  {
+                     "value":"nl",
+                     "key":"Dutch"
+                  },
+                  {
+                     "value":"en",
+                     "key":"English"
+                  },
+                  {
+                     "value":"fr",
+                     "key":"French"
+                  },
+                  {
+                     "value":"hi",
+                     "key":"Hindi"
+                  },
+                  {
+                     "value":"ja",
+                     "key":"Japan"
+                  },
+                  {
+                     "value":"pt",
+                     "key":"Portuguese"
+                  },
+                  {
+                     "value":"zh",
+                     "key":"Chinese"
+                  }
+               ]
+            },
+            {
+               "name":"timezone",
+               "displayName":"Timezone",
+               "defaultValue":"SYSTEM",
+               "type":"select",
+               "values":[
+                  {
+                     "key":"ACDT Australian Central Daylight Time (+10:30)",
+                     "value":"+10:30"
+                  },
+                  {
+                     "key":"ACST Australian Central Standard Time (+9:30)",
+                     "value":"+9:30"
+                  },
+                  {
+                     "key":"ADT Atlantic Daylight Time (-3:00)",
+                     "value":"-3:00"
+                  },
+                  {
+                     "key":"AEDT Australian Eastern Daylight Time (+11:00)",
+                     "value":"+11:00"
+                  },
+                  {
+                     "key":"AEST Australian Eastern Standard Time (+10:00)",
+                     "value":"+10:00"
+                  },
+                  {
+                     "key":"AKDT Alaska Standard Daylight Saving Time (-8:00)",
+                     "value":"-8:00"
+                  },
+                  {
+                     "key":"AKST Alaska Standard Time (-9:00)",
+                     "value":"-9:00"
+                  },
+                  {
+                     "key":"AST Atlantic Standard Time (-4:00)",
+                     "value":"-4:00"
+                  },
+                  {
+                     "key":"AWST Australian Western Standard Time (+8:00)",
+                     "value":"+8:00"
+                  },
+                  {
+                     "key":"BST British Summer Time (+1:00)",
+                     "value":"+1:00"
+                  },
+                  {
+                     "key":"CDT Central Daylight Saving Time (-5:00)",
+                     "value":"-5:00"
+                  },
+                  {
+                     "key":"CEST Central Europe Summer Time (+2:00)",
+                     "value":"+2:00"
+                  },
+                  {
+                     "key":"CET Central Europe Time (+1:00)",
+                     "value":"+1:00"
+                  },
+                  {
+                     "key":"CST Central Standard Time (-6:00)",
+                     "value":"-6:00"
+                  },
+                  {
+                     "key":"Default (SYSTEM)",
+                     "value":"SYSTEM"
+                  },
+                  {
+                     "key":"EDT Eastern Daylight Saving Time (-4:00)",
+                     "value":"-4:002"
+                  },
+                  {
+                     "key":"EEST Eastern Europe Summer Time (+3:00)",
+                     "value":"+3:00"
+                  },
+                  {
+                     "key":"EET Eastern Europe Time (+2:00)",
+                     "value":"+2:00"
+                  },
+                  {
+                     "key":"EST Eastern Standard Time (-5:00)",
+                     "value":"-5:00"
+                  },
+                  {
+                     "key":"GMT Greenwich Mean Time (+00:00)",
+                     "value":"+00:00"
+                  },
+                  {
+                     "key":"HST Hawaiian Standard Time (-10:00)",
+                     "value":"-10:00"
+                  },
+                  {
+                     "key":"IST Indian Standard Time (+5:30)",
+                     "value":"+5:30"
+                  },
+                  {
+                     "key":"IST Irish Summer Time (+1:00)",
+                     "value":"+1:00"
+                  },
+                  {
+                     "key":"MDT Mountain Daylight Saving Time (-6:00)",
+                     "value":"-6:00"
+                  },
+                  {
+                     "key":"MSD Moscow Summer Time (+4:00)",
+                     "value":"+4:00"
+                  },
+                  {
+                     "key":"MSK Moscow Time (+3:00)",
+                     "value":"+3:00"
+                  },
+                  {
+                     "key":"MST Mountain Standard Time (-7:00)",
+                     "value":"-7:00"
+                  },
+                  {
+                     "key":"PDT Pacific Daylight Saving Time (-7:00)",
+                     "value":"-7:00"
+                  },
+                  {
+                     "key":"PST Pacific Standard Time (-8:00)",
+                     "value":"-8:00"
+                  },
+                  {
+                     "key":"WEST Western Europe Summer Time (+1:00)",
+                     "value":"+1:00"
+                  },
+                  {
+                     "key":"WET Western Europe Time (+00:00)",
+                     "value":"+00:00"
+                  }
+               ]
+            },
+            {
+               "name":"notification",
+               "displayName":"Notification Settings",
+               "defaultValue":"0",
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"theme",
+               "displayName":"Theme",
+               "defaultValue":"",
+               "type":"text",
+               "placeholder":""
+            },
+            {
+               "name":"department",
+               "defaultValue":"Default",
+               "displayName":"Department",
+               "type":"text",
+               "placeholder":""
+            }
+         ]
+      },
+      "role_default":{
+         "checked":false,
+		 "tempChecked": false,
+         "description":"Role Defaults",
+         "properties":[
+            {
+               "name":"dashboardOption",
+               "displayName":"Dashboard Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"alertsOption",
+               "displayName":"Alert Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"reportOption",
+               "displayName":"Report Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"mergeReportOption",
+               "displayName":"Merge Report Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"adhocOption",
+               "displayName":"Adhoc Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"resourceOption",
+               "displayName":"Shared Resource Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"quickRunOption",
+               "displayName":"Quick Run Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"mappingOption",
+               "displayName":"Dataset Mapping Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"messageOption",
+               "displayName":"Dynamic Mmessage Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"datasetOption",
+               "displayName":"Dataset Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"parameterOption",
+               "displayName":"Parameter Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"annotationOption",
+               "displayName":"Annotation Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"notificationOption",
+               "displayName":"Notification Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"requestOption",
+               "displayName":"Request Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"View Access",
+                     "value":1
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"adminOption",
+               "displayName":"Admin Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"scheduleOption",
+               "displayName":"Schedule Report Option",
+               "defaultValue":0,
+               "type":"select",
+               "values":[
+                  {
+                     "key":"No Access",
+                     "value":0
+                  },
+                  {
+                     "key":"Full Access",
+                     "value":2
+                  }
+               ]
+            },
+            {
+               "name":"department",
+               "defaultValue":"Default",
+               "type":"text",
+               "displayName":"Department",
+               "placeholder":""
+            }
+         ]
+      }
+   },
+   "housekeeping":{
+      "checked":true,
+	  "tempChecked": true,
+      "description":"House Keeping",
+      "properties":[
+         {
+            "name":"temp_clear",
+            "displayName":"Clear Temporary Files Under Output Folders (in days)",
+            "defaultValue":1,
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"notification_clear",
+            "displayName":"Clear Notifications (in days)",
+            "defaultValue":1,
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"alert_clear",
+            "displayName":"Clear Alerts (in days)",
+            "defaultValue":1,
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"session_clear",
+            "displayName":"Clear Session (in days)",
+            "defaultValue":1,
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"audit_clear",
+            "displayName":"Clear Audit Messages (in days)",
+            "defaultValue":1,
+            "type":"text",
+            "placeholder":"in days"
+         }
+      ]
+   },
+   "archive":{
+      "checked":true,
+	  "tempChecked": true,
+      "description":"Archive",
+      "properties":[
+         {
+            "name":"pdf",
+            "displayName":"PDF Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"html",
+            "displayName":"HTML Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"phtml",
+            "displayName":"Paginated HTML Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"rptdocument",
+            "displayName":"BIRT Report Documents (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"docx",
+            "displayName":"DOCX Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"xls",
+            "displayName":"XLS Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"xlsx",
+            "displayName":"XLSX Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"xml",
+            "displayName":"XML Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"prptdocument",
+            "displayName":"Pentaho Documents (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"json",
+            "displayName":"JSON Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"csv",
+            "displayName":"CSV Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"rtf",
+            "displayName":"RTF Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"txt",
+            "displayName":"TXT Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"pptx",
+            "displayName":"PPTX Files (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"cds",
+            "displayName":"Cache Datasets (in days)",
+            "defaultValue":"90",
+            "type":"text",
+            "placeholder":"in days"
+         }
+      ]
+   },
+   "purge":{
+      "checked":true,
+	  "tempChecked": true,
+      "description":"Purge",
+      "properties":[
+         {
+            "name":"pdf",
+            "displayName":"PDF Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"html",
+            "displayName":"HTML Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"phtml",
+            "displayName":"Paginated HTML Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"rptdocument",
+            "displayName":"BIRT Report Documents (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"docx",
+            "displayName":"DOCX Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"xls",
+            "displayName":"XLS Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"xlsx",
+            "displayName":"XLSX Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"xml",
+            "displayName":"XML Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"prptdocument",
+            "displayName":"Pentaho Documents (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"json",
+            "displayName":"JSON Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"csv",
+            "displayName":"CSV Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"rtf",
+            "displayName":"RTF Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"txt",
+            "displayName":"TXT Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"pptx",
+            "displayName":"PPTX Files (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         },
+         {
+            "name":"cds",
+            "displayName":"Cache Datasets (in days)",
+            "defaultValue":"180",
+            "type":"text",
+            "placeholder":"in days"
+         }
+      ]
+   }
+}

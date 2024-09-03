@@ -1,0 +1,28 @@
+Country,CustomerNumber,Owner,Approval,Output Name,Output Path,Output Format ,CoverPageImage,Report Frequency,Report Name,Email Address
+France,103,Gerard,Andy,France,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Weekly Report,gerard@activeintelligence.co.uk
+USA,112,Anthony,Andy,USA,/Output/Temp/,pdf,common/images/Cover2.jpg,1,Daily,anthony@activeintelligence.co.uk
+Australia,-1,William,Andy,Australia,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Monthly,william@activeintelligence.co.uk
+Norway,-1,Gerard,Andy,Norway,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Weekly Report,gerard@activeintelligence.co.uk
+Poland,-1,Gerard,Andy,Poland,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Daily,gerard@activeintelligence.co.uk
+Germany,-1,Gerard,Andy,Germany,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk
+Spain,-1,Gerard,Andy,Spain,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Weekly Report,gerard@activeintelligence.co.uk
+Sweden,-1,Gerard,Andy,Sweden,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Daily,gerard@activeintelligence.co.uk
+Denmark,-1,Gerard,Andy,Denmark,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk
+Singapore,-1,William,Andy,Singapore,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Weekly Report,william@activeintelligence.co.uk
+Portugal,-1,Gerard,Andy,Portugal,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Daily,gerard@activeintelligence.co.uk
+Japan,-1,William,Andy,Japan,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Monthly,william@activeintelligence.co.uk
+Finland,-1,Gerard,Andy,Finland,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Weekly Report,gerard@activeintelligence.co.uk
+UK,-1,Gerard,Andy,UK,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Daily,gerard@activeintelligence.co.uk
+Ireland,-1,Gerard,Andy,Ireland,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk
+Canada,-1,Anthony,Andy,Canada,/Output/Temp/,pdf,common/images/Cover2.jpg,1,Weekly Report,anthony@activeintelligence.co.uk
+Hong Kong,-1,William,Andy,Hong Kong,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Daily,william@activeintelligence.co.uk
+Italy,-1,Gerard,Andy,Italy,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk
+Switzerland,-1,Gerard,Andy,Switzerland,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Weekly Report,gerard@activeintelligence.co.uk
+Netherlands,-1,Gerard,Andy,Netherlands,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Daily,gerard@activeintelligence.co.uk
+Belgium,-1,Gerard,Andy,Belgium,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk
+New Zealand,-1,William,Andy,New Zealand,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Weekly Report,william@activeintelligence.co.uk
+South Africa,-1,William,Andy,South Africa,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Daily,william@activeintelligence.co.uk
+Austria,-1,Gerard,Andy,Austria,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk
+Philippines,-1,William,Andy,Philippines,/Output/Temp/,pdf,common/images/Cover4.jpg,1,Weekly Report,william@activeintelligence.co.uk
+Russia,-1,Gerard,Andy,Russia,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Daily,gerard@activeintelligence.co.uk
+Israel,-1,Gerard,Andy,Israel,/Output/Temp/,pdf,common/images/Cover1.jpg,1,Monthly,gerard@activeintelligence.co.uk

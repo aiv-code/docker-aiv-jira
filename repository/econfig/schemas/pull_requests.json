@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["null", "string"],
+      "set":"primary"
+    },
+    "branches": {
+      "type": ["null", "array"],
+      "updatable": "true",
+      "items": {
+        "type": ["null", "object"]
+      }
+    },
+    "pullRequests": {
+      "type": ["null", "array"],
+      "updatable": "true",
+      "items": {
+        "type": ["null", "object"]
+      }
+    },
+    "repositories": {
+      "type": ["null", "array"],
+      "updatable": "true",
+      "items": {
+        "type": ["null", "object"]
+      }
+    },
+    "_instance": {
+      "type": ["null", "object"],
+      "updatable": "true",
+      "properties": {
+        "name": {
+          "type": ["null", "string"]
+        },
+        "baseUrl": {
+          "type": ["null", "string"]
+        },
+        "type": {
+          "type": ["null", "string"]
+        },
+        "id": {
+          "type": ["null", "string"]
+        },
+        "typeName": {
+          "type": ["null", "string"]
+        },
+        "singleInstance": {
+          "type": ["null", "boolean"]
+        }
+      }
+    },
+    "updated": {
+      "type": "string",
+      "updatable": "true",
+      "format": "date-time"
+    }
+  }
+}

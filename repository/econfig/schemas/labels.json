@@ -1,0 +1,9 @@
+{
+  "type": ["object", "null"],
+  "properties": {
+    "label": {
+      "type": ["string", "null"],
+      "updatable": "true"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "set": "primary"
+    },
+    "self": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "name": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "type": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "projectId": {
+      "type": "string",
+      "location" : "location,projectId",
+      "updatable": "true"
+    },
+    "projectKey": {
+      "type": "string",
+      "location" : "location,projectKey",
+      "updatable": "true"
+    }
+  }
+}

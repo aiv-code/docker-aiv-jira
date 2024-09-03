@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+	"issueid": {
+      "type": "string"
+    },
+	"originalEstimate": {
+      "type": "string",
+	  "updatable": "true"
+    },
+	"remainingEstimate": {
+      "type": "string",
+	  "updatable": "true"
+    },
+    "timeSpent": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "originalEstimateSeconds": {
+      "type": "integer",
+      "updatable": "true"
+    },
+	 "remainingEstimateSeconds": {
+      "type": "integer",
+      "updatable": "true"
+    },
+	 "timeSpentSeconds": {
+      "type": "integer",
+      "updatable": "true"
+    }
+  }
+}

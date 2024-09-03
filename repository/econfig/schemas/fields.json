@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "set": "primary"
+    },
+    "key": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "name": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "untranslatedName": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "custom": {
+      "type": "boolean",
+      "updatable": "true"
+    },
+	 "orderable": {
+      "type": "boolean",
+      "updatable": "true"
+    },
+	 "navigable": {
+      "type": "boolean",
+      "updatable": "true"
+    },
+	 "searchable": {
+      "type": "boolean",
+      "updatable": "true"
+    },
+    "customfieldId": {
+      "type": "string",
+      "location" : "schema,customId",
+      "updatable": "true"
+    }
+  }
+}

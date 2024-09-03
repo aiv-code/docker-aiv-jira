@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the avatar.",
+      "set": "primary"
+    },
+    "owner": {
+      "type": "string",
+      "description": "The owner of the avatar. For a system avatar the owner is null (and nothing is returned). For non-system avatars this is the appropriate identifier, such as the ID for a project or the account ID for a user.",
+      "updatable": true,
+      "readOnly": true
+    },
+    "isSystemAvatar": {
+      "type": "boolean",
+      "description": "Whether the avatar is a system avatar.",
+      "updatable": true,
+      "readOnly": true
+    },
+    "isSelected": {
+      "type": "boolean",
+      "description": "Whether the avatar is used in Jira. For example, shown as a project's avatar.",
+      "updatable": true,
+      "readOnly": true
+    },
+    "isDeletable": {
+      "type": "boolean",
+      "description": "Whether the avatar can be deleted.",
+      "updatable": true,
+      "readOnly": true
+    },
+    "fileName": {
+      "type": "string",
+      "description": "The file name of the avatar icon. Returned for system avatars.",
+     "updatable": true,
+      "readOnly": true
+    },
+    "urls": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "The list of avatar icon URLs.",
+     "updatable": true,
+      "readOnly": true
+    }
+  },
+  "additionalProperties": true,
+  "description": "List of system avatars."
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+	"customfieldName": {
+      "type": "string"
+    },
+	"customfieldId": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+	  "updatable": "true"
+    },
+    "issueid": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "value": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "self": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "name": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "state": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "boardId": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "goal": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "startDate": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "endDate": {
+      "type": "string",
+      "updatable": "true"
+    },
+	 "completeDate": {
+      "type": "string",
+      "updatable": "true"
+    }
+  }
+}

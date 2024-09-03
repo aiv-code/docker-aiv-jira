@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.5.0.v201506092134 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[var pList = reportContext.getDesignHandle().getAllParameters();
+var pListSize = pList.size();
+for (i=0; i<pListSize; i++){
+    var paramName = pList.get( i ).getFullName();
+    var paramType = pList.get( i ).getStringProperty("paramType");
+    if("CoverPageImage" == paramName){
+		if(reportContext.getParameterValue( paramName ) != null){
+			var msp = reportContext.getDesignHandle().findMasterPage("CoverPage");
+			msp.setProperty("backgroundImage", reportContext.getParameterValue( paramName));
+		}        
+    }
+}]]></method>
+    <property name="theme">themes.defaultTheme</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">common/libraries/themes.rptlibrary</property>
+            <property name="namespace">themes</property>
+        </structure>
+        <structure>
+            <property name="fileName">common/libraries/Component Library.rptlibrary</property>
+            <property name="namespace">Component Library</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="Period" id="187" extends="Component Library.Period"/>
+        <scalar-parameter name="CoverPageImage" id="188" extends="Component Library.CoverPageImage"/>
+        <scalar-parameter name="ReportTitle" id="195">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <page-setup>
+        <simple-master-page name="Default" id="4">
+            <property name="type">a4</property>
+            <property name="headerHeight">0.8in</property>
+            <page-header>
+                <grid name="NewGrid121" id="153">
+                    <column id="154"/>
+                    <column id="155">
+                        <property name="width">75px</property>
+                    </column>
+                    <column id="156"/>
+                    <row id="157">
+                        <property name="height">28px</property>
+                        <cell id="158">
+                            <property name="borderBottomColor">#FF8000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                        <cell id="159">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <image name="NewImage1121" id="160">
+                                <property name="height">57px</property>
+                                <property name="width">80px</property>
+                                <property name="source">file</property>
+                                <expression name="uri" type="constant">common/images/logos.png</expression>
+                            </image>
+                        </cell>
+                        <cell id="161">
+                            <property name="borderBottomColor">#FF8000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">medium</property>
+                        </cell>
+                    </row>
+                    <row id="163">
+                        <cell id="164"/>
+                        <cell id="165"/>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid name="NewGrid3" id="166">
+                    <column id="167"/>
+                    <column id="168"/>
+                    <row id="169">
+                        <cell id="170">
+                            <text name="NewText2" id="183">
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of format="dd MMM yy">new Date()</value-of>]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="171">
+                            <property name="textAlign">right</property>
+                            <grid name="NewGrid21" id="172">
+                                <property name="marginLeft">0pt</property>
+                                <property name="width">1in</property>
+                                <column id="173"/>
+                                <column id="174"/>
+                                <column id="175"/>
+                                <row id="176">
+                                    <cell id="177">
+                                        <auto-text name="NewAutoText21" id="178">
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="179">
+                                        <text name="NewText11" id="180">
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[/]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="181">
+                                        <auto-text name="NewAutoText111" id="182">
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+        <simple-master-page name="CoverPage" id="184">
+            <property name="type">a4</property>
+            <property name="backgroundImage">common/images/Cover1.jpg</property>
+            <property name="backgroundPositionY">center</property>
+            <property name="backgroundRepeat">no-repeat</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid name="CoverPage" id="185" extends="Component Library.CoverPage">
+            <overridden-values>
+                <ref-entry baseId="56" id="56"/>
+                <ref-entry baseId="57" id="57"/>
+                <ref-entry baseId="58" id="58"/>
+                <ref-entry baseId="61" name="logo" id="61"/>
+                <ref-entry baseId="59" id="59"/>
+                <ref-entry baseId="60" id="60"/>
+                <ref-entry baseId="62" name="coverheader" id="62"/>
+            </overridden-values>
+        </grid>
+        <grid name="Performance Report" id="194" extends="Component Library.Performance Report">
+            <overridden-values>
+                <ref-entry baseId="10" id="10"/>
+                <ref-entry baseId="90" id="90"/>
+                <ref-entry baseId="91" id="91"/>
+                <ref-entry baseId="16" name="NewLabel" id="16"/>
+                <ref-entry baseId="92" name="NewChart" id="92"/>
+            </overridden-values>
+        </grid>
+    </body>
+</report>

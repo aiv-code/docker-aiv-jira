@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "expand": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "id": {
+      "type": "string"
+    },
+    "self": {
+      "type": "string",
+      "updatable": "true"
+      
+    },
+    "key": {
+      "type": "string",
+      "set": "primary"
+    },
+    "fields": {
+      "type": "object",
+      "updatable": "true",
+      "properties": {
+        "flagged": {
+          "type": ["null", "boolean"]
+        },
+        "sprint": {
+          "type": ["null", "object"]
+        },
+        "closedSprints": {
+          "type": ["null", "object"]
+        },
+        "description": {
+          "type": ["null", "string"]
+        },
+        "project": {
+          "type": ["null", "object"]
+        },
+        "comment": {
+          "type": ["null", "array"],
+          "items": {
+            "type": "object"
+          }
+        },
+        "epic": {
+          "type": ["null", "object"]
+        },
+        "worklog": {
+          "type": ["null", "array"],
+          "items": {
+            "type": "object"
+          }
+        },
+        "updated": {
+          "type": ["null", "string"],
+          "format": "date-time"
+        },
+        "timetracking": {
+          "type": ["null", "object"]
+        }
+      }
+    },
+    "boardId": {
+      "type": "integer",
+      "updatable": "true"
+      
+    },
+    "created": {
+      "type": ["string", "null"],
+      "location":"fields,created",
+      "format": "date-time",
+      "description": "This field transformed from fields attr",
+      "readOnly": true,
+      "updatable": "true"
+    },
+    "updated": {
+      "type": ["string", "null"],
+      "location":"fields,updated",
+      "format": "date-time",
+      "description": "This field transformed from fields attr",
+      "readOnly": true,
+      "updatable": "true"
+    }
+  }
+}

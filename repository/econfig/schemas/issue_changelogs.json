@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "issueId":{
+    	"type":"string"
+    },
+    "author": {
+      "type": "string",
+      "location": "author,accountId"
+    },
+    "created": {
+      "type": "timestamp"
+    },
+    "field": {
+      "type": "string",
+      "location": "items,field"
+    },
+    "fieldtype": {
+      "type": "string",
+      "location": "items,fieldtype"
+    },
+    "fromId": {
+      "type": "string",
+      "location": "items,from"
+    },
+    "fromString": {
+      "type": "string",
+      "location": "items,fromString"
+    },
+    "toId": {
+      "type": "string",
+      "location": "items,to"
+    },
+    "toString": {
+      "type": "string",
+      "location": "items,toString"
+    }
+  }
+}

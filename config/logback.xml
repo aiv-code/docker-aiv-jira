@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="jsonlogs" source="app.logs.jsonlogs"/>
+    <springProperty scope="context" name="showdept" source="app.logs.showdept"/>
+    <springProperty scope="context" name="showtraceid" source="app.logs.showtraceid"/>
+
+    <property name="HOME_LOG" value="/opt/logs/logs/core.log"/>
+
+    <appender name="CORE-FILE-ROLLING" class="ch.qos.logback.core.ConsoleAppender">
+
+
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <timestamp>
+                    <fieldName>Timestamp</fieldName>
+                    <timeZone>UTC</timeZone>
+                </timestamp>
+                <pattern>
+                    <omitEmptyFields>true</omitEmptyFields>
+                    <pattern>
+                        {
+                        "Message": "#asJson{%message}",
+                        "TraceId": "%mdc{traceId}",
+                        "ServiceHostName": "${hostname}",
+                        "PID": "${PID:-}",
+                        "Ex": "%ex"
+                        }
+                    </pattern>
+                </pattern>
+            </providers>
+        </encoder>
+    </appender>
+
+    <logger name="core" level="debug" additivity="true">
+        <appender-ref ref="CORE-FILE-ROLLING"/>
+    </logger>
+
+    <!-- ... (repeat similar changes for other loggers) -->
+
+    <!--ROOT-->
+
+    <property name="HOME_LOG8" value="/opt/logs/logs/start_core.log"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

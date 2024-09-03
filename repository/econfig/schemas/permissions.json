@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": ["null", "string"],
+      "set": "primary"
+    },
+    "name": {
+      "type": ["null", "string"],
+      "updatable": "true"
+    },
+    "type": {
+      "type": ["null", "string"],
+      "updatable": "true"
+    },
+    "description": {
+      "type": ["null", "string"],
+      "updatable": "true"
+    }
+  },
+  "additionalProperties": true,
+  "description": "Details about permissions."
+}

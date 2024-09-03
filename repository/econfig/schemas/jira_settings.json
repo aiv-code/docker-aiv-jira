@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "set":"primary",
+      "description": "The ID of the application property. The ID and key are the same."
+    },
+    "key": {
+      "type": "string",
+      "description": "The key of the application property. The ID and key are the same."
+    },
+    "value": {
+      "type": "string",
+      "updatable": "true",
+      "description": "The new value."
+    },
+    "name": {
+      "type": "string",
+      "updatable": "true",
+      "description": "The name of the application property."
+    },
+    "description": {
+      "type": "string",
+      "updatable": "true",
+      "description": "The description of the application property."
+    },
+    "type": {
+      "type": "string",
+      "updatable": "true",
+      "description": "The data type of the application property."
+    },
+    "defaultValue": {
+      "type": "string",
+      "updatable": "true",
+      "description": "The default value of the application property."
+    },
+    "example": {
+      "type": "string",
+      "updatable": "true"
+    },
+    "allowedValues": {
+      "type": "array",
+      "updatable": "true",
+      "description": "The allowed values, if applicable.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "description": "Details of an application property."
+}

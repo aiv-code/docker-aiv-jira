@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.5.0.v201506092134 Build &lt;@BUILD@></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[var pList = reportContext.getDesignHandle().getAllParameters();
+var pListSize = pList.size();
+for (i=0; i<pListSize; i++){
+    var paramName = pList.get( i ).getFullName();
+    if("CoverPageImage" == paramName){
+		if(reportContext.getParameterValue( paramName ) != null){
+			var msp = reportContext.getDesignHandle().findMasterPage("CoverPage");
+			if(msp != null)
+				msp.setProperty("backgroundImage", reportContext.getParameterValue( paramName));
+		}        
+    }
+}]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ReportTitle" id="293">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">Report on the fly</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <styles>
+        <style name="table-group-header-1" id="46">
+            <property name="backgroundColor">#F7F7F7</property>
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12pt</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#666666</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="table-group-header-2" id="235">
+            <property name="backgroundColor">#F7F7F7</property>
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#666666</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="table-group-header-5" id="298">
+            <property name="backgroundColor">#F7F7F7</property>
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#666666</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="table-group-header-4" id="297">
+            <property name="backgroundColor">#F7F7F7</property>
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#666666</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="table-group-header-3" id="296">
+            <property name="backgroundColor">#F7F7F7</property>
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#666666</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="table-header" id="129">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">normal</property>
+            <property name="color">#333333</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="marginTop">0px</property>
+            <property name="marginBottom">0px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="textAlign">left</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="CoverPageTitle" id="89">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">24px</property>
+            <property name="fontWeight">300</property>
+            <property name="color">#333333</property>
+            <property name="marginTop">30px</property>
+            <property name="marginLeft">20px</property>
+            <property name="marginBottom">0px</property>
+            <property name="marginRight">20px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">39px</property>
+        </style>
+        <style name="CoverPageTitleDescription" id="92">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#333333</property>
+            <property name="borderBottomColor">#999999</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">2px</property>
+            <property name="marginTop">0px</property>
+            <property name="marginLeft">20px</property>
+            <property name="marginBottom">0px</property>
+            <property name="marginRight">20px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">20px</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+        </style>
+        <style name="Result" id="124">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">18px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#333333</property>
+            <property name="marginTop">21px</property>
+            <property name="marginLeft">0px</property>
+            <property name="marginBottom">-5px</property>
+            <property name="marginRight">0px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0px</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">18px</property>
+        </style>
+        <style name="ResultItem" id="126">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">14px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#333333</property>
+            <property name="marginTop">21px</property>
+            <property name="marginLeft">0px</property>
+            <property name="marginBottom">-5px</property>
+            <property name="marginRight">0px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0px</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">18px</property>
+        </style>
+        <style name="table-detail" id="141">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+            <property name="fontWeight">100</property>
+            <property name="color">#333333</property>
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">none</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="marginLeft">0px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="lineHeight">16px</property>
+            <property name="verticalAlign">middle</property>
+            <property name="whiteSpace">nowrap</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="table-detail-cell" id="143">
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0px</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+        </style>
+        <style name="table-header-cell" id="144">
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">10px</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+        </style>
+        <style name="detailitem" id="145">
+            <property name="borderBottomColor">#DEDEDE</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="marginTop">-1px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">10pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="detailitemfirstcolumn" id="147">
+            <property name="borderBottomColor">#DEDEDE</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderTopColor">#D9D9D9</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="marginTop">-1px</property>
+            <property name="marginLeft">30px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">10px</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+            <property name="verticalAlign">middle</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="headerfirstcolumn" id="148">
+            <property name="marginTop">0px</property>
+            <property name="marginLeft">20px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+        </style>
+        <style name="table" id="149">
+            <property name="borderBottomColor">#D9D9D9</property>
+            <property name="borderBottomStyle">none</property>
+            <property name="borderBottomWidth">2px</property>
+            <property name="marginLeft">0px</property>
+            <property name="marginRight">0px</property>
+            <property name="paddingTop">0pt</property>
+            <property name="paddingLeft">0pt</property>
+            <property name="paddingBottom">0pt</property>
+            <property name="paddingRight">0pt</property>
+        </style>
+        <style name="table-footer" id="154">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">14px</property>
+            <property name="color">#333333</property>
+            <property name="borderTopColor">#999999</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">2px</property>
+            <property name="height">36px</property>
+        </style>
+        <style name="footersection" id="292">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">12px</property>
+        </style>
+        <style name="Numeric2d" id="301">
+            <structure name="numberFormat">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+            </structure>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="Numeric0d" id="304">
+            <structure name="numberFormat">
+                <property name="category">Fixed</property>
+                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+            </structure>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="CenterAlign" id="302">
+            <property name="textAlign">center</property>
+        </style>
+        <style name="RightAlign" id="303">
+            <property name="textAlign">right</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Default" id="62">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0px</property>
+            <property name="leftMargin">10px</property>
+            <property name="bottomMargin">0in</property>
+            <property name="rightMargin">10px</property>
+            <property name="headerHeight">80px</property>
+            <property name="footerHeight">50px</property>
+            <page-header>
+                <label id="309">
+                    <property name="style">CoverPageTitle</property>
+                    <property name="marginLeft">5px</property>
+                    <property name="marginRight">0px</property>
+                    <method name="onCreate"><![CDATA[this.text = params["ReportTitle"].value;]]></method>
+                    <text-property name="text">Report on the fly</text-property>
+                </label>
+            </page-header>
+            <page-footer>
+                <grid id="310">
+                    <property name="marginLeft">0px</property>
+                    <property name="marginBottom">0pt</property>
+                    <property name="marginRight">0px</property>
+                    <column id="311">
+                        <property name="width">2px</property>
+                    </column>
+                    <column id="312"/>
+                    <column id="313">
+                        <property name="width">2.3125in</property>
+                    </column>
+                    <row id="314">
+                        <property name="style">footersection</property>
+                        <property name="backgroundColor">#F2F2F2</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="height">50px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">html</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="315">
+                            <property name="whiteSpace">nowrap</property>
+                        </cell>
+                        <cell id="316">
+                            <text id="317">
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<B>
+<FONT color="#333333" face="sans-serif">
+<VALUE-OF>params["ReportTitle"].value+ "  "</VALUE-OF>
+</FONT>
+</B>
+<FONT color="#666666" face="sans-serif">
+| <VALUE-OF format="dd/MM/yyyy">new Date()</VALUE-OF>
+</FONT>
+]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="318">
+                            <property name="textAlign">right</property>
+                            <grid id="319">
+                                <property name="whiteSpace">nowrap</property>
+                                <property name="display">inline</property>
+                                <column id="320"/>
+                                <row id="321">
+                                    <cell id="322">
+                                        <property name="textAlign">right</property>
+                                        <auto-text id="323">
+                                            <property name="fontFamily">sans-serif</property>
+                                            <property name="fontSize">12px</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#333333</property>
+                                            <property name="textAlign">right</property>
+                                            <property name="display">inline</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                        <text id="324">
+                                            <property name="fontFamily">sans-serif</property>
+                                            <property name="fontSize">12px</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#333333</property>
+                                            <property name="paddingLeft">2pt</property>
+                                            <property name="paddingRight">2pt</property>
+                                            <property name="textAlign">center</property>
+                                            <property name="display">inline</property>
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[of]]></text-property>
+                                        </text>
+                                        <auto-text id="325">
+                                            <property name="fontFamily">sans-serif</property>
+                                            <property name="fontSize">12px</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#333333</property>
+                                            <property name="paddingLeft">1pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="display">inline</property>
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <list-property name="images">
+        <structure>
+            <property name="name">uE652-file_task_o.svg</property>
+            <property name="type">image/svg+xml</property>
+            <property name="data">
+                PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIz
+                MiIgdmlld0JveD0iMCAwIDI2IDMyIj4KPHBhdGggZD0iTTI1Ljg3MyAyOS4zMDVjMCAxLjQ3OC0xLjM1
+                NSAyLjcxLTIuODM0IDIuNzFoLTIwLjMyOGMtMS40NzggMC0yLjcxLTEuMjMyLTIuNzEtMi43MXYtMjYu
+                NDg3YzAtMS40NzggMS4yMzItMi44MzQgMi43MS0yLjgzNGgzLjQ1djIuNDY0aC0zLjMyNmMtMC4yNDYg
+                MC0wLjM3IDAuMTIzLTAuMzcgMC4zN3YyNi4zNjRjMCAwLjI0NiAwLjEyMyAwLjM3IDAuMzcgMC4zN2gy
+                MC4yMDRjMC4xMjMgMCAwLjM3LTAuMTIzIDAuMzctMC4zN3YtMjYuMTE4YzAtMC4zNy0wLjI0Ni0wLjYx
+                Ni0wLjYxNi0wLjYxNmgtMy4wODB2LTIuNDY0aDMuNjk2YzEuMzU1IDAgMi40NjQgMS4yMzIgMi40NjQg
+                Mi41ODd2MjYuNzM0ek0xNy4yNDktMC4wMTZoLTguNjI0djMuNjk2aDguNjI0di0zLjY5NnpNMTkuNzEz
+                IDExLjA3MmMwLTAuNjE2LTAuNDkzLTEuMjMyLTEuMTA5LTEuMjMyaC0xMS4zMzRjLTAuNjE2IDAtMS4x
+                MDkgMC40OTMtMS4xMDkgMS4yMzIgMCAwLjYxNiAwLjQ5MyAxLjIzMiAxLjEwOSAxLjIzMmgxMS4zMzRj
+                MC42MTYtMC4xMjMgMS4xMDktMC42MTYgMS4xMDktMS4yMzJ6TTE5LjcxMyAxNmMwLTAuNjE2LTAuNDkz
+                LTEuMjMyLTEuMTA5LTEuMjMyaC0xMS4zMzRjLTAuNjE2IDAtMS4xMDkgMC40OTMtMS4xMDkgMS4yMzIg
+                MCAwLjYxNiAwLjQ5MyAxLjIzMiAxLjEwOSAxLjIzMmgxMS4zMzRjMC43MzktMC4xMjMgMS4xMDktMC42
+                MTYgMS4xMDktMS4yMzJ6TTE5LjcxMyAyMC45MjhjMC0wLjYxNi0wLjQ5My0xLjIzMi0xLjEwOS0xLjIz
+                MmgtMTEuMzM0Yy0wLjYxNiAwLTEuMTA5IDAuNDkzLTEuMTA5IDEuMjMyIDAgMC42MTYgMC40OTMgMS4y
+                MzIgMS4xMDkgMS4yMzJoMTEuMzM0YzAuNzM5IDAgMS4xMDktMC40OTMgMS4xMDktMS4yMzJ6Ij48L3Bh
+                dGg+Cjwvc3ZnPgo=
+</property>
+        </structure>
+        <structure>
+            <property name="name">ic_report.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFn
+                ZVJlYWR5ccllPAAAAGZJREFUeNpiZAACFxeX90BKYM+ePYxA9n8GJIAk9gHIFmSCigsAsSMDbiAIVQMB
+                6KZiAzA1TAwkAhY0U+YDqQQ0NY1AtzdgtY4YJw0HG5iQBATwKBZAD9YPQPweKIHPEpAaBoAAAwCQzjA1
+                TNSUkgAAAABJRU5ErkJggg==
+</property>
+        </structure>
+    </list-property>
+</report>
