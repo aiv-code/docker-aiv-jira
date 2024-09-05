@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DATASOURCE name="Jira" sourcetype="jdbc" type="postgresql"><DATASET isStoredProc="false" name="Issues by status and type" type="NormalDataset"><QUERY>select count(i.key) as total_issue, p.name, i.issuestatus, s.name as statusName,
+it.name as issueType from issues i
+inner join projects p on p.id = i.project
+left join status s on s.id = i.issuestatus
+left join issue_types it on it.id = i.issuetype
+group by p.name, i.issuestatus, s.name, it.name</QUERY><PARAMETERS/><METADATA>[{"isAutoIncremented":false,"colDbType":"int8","alias":"total_issue","colSqlType":-5,"type":"Long","key":"total_issue","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"name","colSqlType":12,"type":"String","key":"name","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"issuestatus","colSqlType":12,"type":"String","key":"issuestatus","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"statusname","colSqlType":12,"type":"String","key":"statusname","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"issuetype","colSqlType":12,"type":"String","key":"issuetype","ctype":"","dtype":""}]</METADATA><CUSTOMMETADATA>[]</CUSTOMMETADATA><HIERARCHIES>{}</HIERARCHIES></DATASET></DATASOURCE>

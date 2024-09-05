@@ -685,3 +685,6 @@ SELECT SETVAL('ai_filetype_id_seq', (SELECT MAX(id) from ai_filetype));//@
 
 
 commit;//@
+
+SET search_path TO "$user", public;//@
+commit;//@

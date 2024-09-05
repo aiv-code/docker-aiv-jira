@@ -47,7 +47,7 @@ services:
       security_db_url: jdbc:postgresql://db:5432/postgres?currentSchema=security
       security_db_user: ${AIV_DB_USER}
       security_db_password: ${AIV_DB_PASSWORD}
-      jira_db_url: jdbc:postgresql://db:5432/jiraTest
+      jira_db_url: jdbc:postgresql://db:5432/aivjira
       jira_db_user: ${AIV_DB_USER}
       jira_db_password: ${AIV_DB_PASSWORD}
       addon_base_url: http://localhost:8080/aiv

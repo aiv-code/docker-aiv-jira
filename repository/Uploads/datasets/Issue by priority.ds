@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DATASOURCE name="Jira" sourcetype="jdbc" type="postgresql"><DATASET isStoredProc="false" name="Issue by priority" type="NormalDataset"><QUERY>select count(i.key) as total_issue, p.name, s.name as statusName, ip.name as issue_priority from issues i
+inner join projects p on p.id = i.project
+left join status s on s.id = i.issuestatus
+left join issue_priorities ip on ip.id = i.priority
+group by p.name, s.name, ip.name</QUERY><PARAMETERS/><METADATA>[{"isAutoIncremented":false,"colDbType":"int8","alias":"total_issue","colSqlType":-5,"type":"Long","key":"total_issue","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"name","colSqlType":12,"type":"String","key":"name","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"statusname","colSqlType":12,"type":"String","key":"statusname","ctype":"","dtype":""},{"isAutoIncremented":false,"colDbType":"varchar","alias":"issue_priority","colSqlType":12,"type":"String","key":"issue_priority"}]</METADATA><CUSTOMMETADATA>[]</CUSTOMMETADATA><HIERARCHIES>{}</HIERARCHIES></DATASET></DATASOURCE>
