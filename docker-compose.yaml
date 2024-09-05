@@ -17,6 +17,7 @@ services:
       POSTGRES_USER: ${AIV_DB_USER}
       POSTGRES_PASSWORD: ${AIV_DB_PASSWORD}
     volumes:
+      - ./config/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./pg_data:/var/lib/postgresql/data
     ports:
       - '${DB_PORT}:5432'
@@ -35,11 +36,11 @@ services:
     container_name: aiv
     image: jits023/aiv-jira:6.0.0
     ports: 
-      - "9090:8080"
+      - "443:443"
     depends_on:
       - db
     environment:
-      aiv_port: 8080
+      aiv_port: 443
       aiv_base: /opt
       aiv_db_url: jdbc:postgresql://db:5432/postgres
       aiv_db_user: ${AIV_DB_USER}
