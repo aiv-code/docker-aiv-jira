@@ -99,8 +99,7 @@ jira.username: ${jira_db_user}
 jira.password: ${jira_db_password}
 jira.type_database: postgresql
 jira.protocol: jdbc
-jiraAdminRoles: administrators,atlassian-addons-admin,site-admins,system-administrators
-
+jiraAdminRoles: administrators,atlassian-addons-admin,site-admins,system-administrators,org_admins
 
 # Temporary location
 general:

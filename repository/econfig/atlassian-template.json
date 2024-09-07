@@ -1,14 +1,14 @@
 {
   "key": "AIV",
-  "baseUrl": "https://b861-178-18-242-154.ngrok-free.app/aiv",
+  "baseUrl": "$addon_base_url",
   "name": "AIV-JIRA",
   "authentication": {
     "type": "jwt"
   },
   "icons": {
-    "16": "https://b861-178-18-242-154.ngrok-free.app/aiv/assets/images/logo.png",
-    "48": "https://b861-178-18-242-154.ngrok-free.app/aiv/assets/images/logo.png",
-    "128": "https://b861-178-18-242-154.ngrok-free.app/aiv/assets/images/logo.png"
+    "16": "$addon_base_url/assets/images/logo.png",
+    "48": "$addon_base_url/assets/images/logo.png",
+    "128": "$addon_base_url/assets/images/logo.png"
   },
   "scopes": ["READ","WRITE","ACT_AS_USER","admin"],
   "lifecycle": {

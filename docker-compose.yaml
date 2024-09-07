@@ -35,6 +35,8 @@ services:
   aiv: 
     container_name: aiv
     image: jits023/aiv-jira:6.0.0
+    entrypoint: ["/opt/init.sh"]  # ENTRYPOINT is set here
+    command: []                   # CMD is set here (optional, to pass arguments)
     ports: 
       - "443:443"
     depends_on:
