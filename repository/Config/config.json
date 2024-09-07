@@ -76,7 +76,7 @@
          {
             "name":"kernel_ip",
             "displayName":"Kernel IP",
-            "defaultValue":"://localhost:8888/api/",
+            "defaultValue":"http://aiv-ai:8000",
             "type":"text",
             "placeholder":""
          },
@@ -97,7 +97,7 @@
          {
             "name":"data_dump_loc",
             "displayName":"External Data Dump Location",
-            "defaultValue":"/opt/dloc",
+            "defaultValue":"/usr/local/temp/",
             "type":"text",
             "placeholder":""
          },

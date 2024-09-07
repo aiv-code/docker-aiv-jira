@@ -59,6 +59,7 @@ services:
       - ./config:/opt/config
       - ./repository:/opt/repository
       - ./logs:/opt/logs
+      - ./dataloc/:/usr/local/temp/
     restart: always
   aiv-ai: 
     container_name: aiv-ai
