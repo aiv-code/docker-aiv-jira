@@ -70,7 +70,9 @@
     },
     "storyPoints": {
       "type": "integer",
-      "location": "fields,customfield_10031",
+      "custom": true,
+      "customname": "Story Points",
+      "location": "fields",
       "updatable": "true"
     },
     "assignee": {

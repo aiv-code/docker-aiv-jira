@@ -559,6 +559,41 @@ CREATE TABLE IF NOT EXISTS "XXXXX".ai_chathistory
     CONSTRAINT ai_chathistory_pkey PRIMARY KEY (id)
 );//@
 
+
+insert into "XXXXX".ai_timezone values
+(1,'ACDT Australian Central Daylight Time','+10:30'),
+(2,'ACST Australian Central Standard Time','+9:30'),
+(3,'ADT Atlantic Daylight Time','-3:00'),
+(4,'AEDT Australian Eastern Daylight Time','+11:00'),
+(5,'AEST Australian Eastern Standard Time','+10:00'),
+(6,'AKDT Alaska Standard Daylight Saving Time','-8:00'),
+(7,'AKST Alaska Standard Time','-9:00'),
+(8,'AST Atlantic Standard Time','-4:00'),
+(9,'AWST Australian Western Standard Time','+8:00'),
+(10,'BST British Summer Time','+1:00'),
+(11,'CDT Central Daylight Saving Time','-5:00'),
+(12,'CEST Central Europe Summer Time','+2:00'),
+(13,'CET Central Europe Time','+1:00'),
+(14,'CST Central Standard Time','-6:00'),
+(15,'Default','SYSTEM'),
+(16,'EDT Eastern Daylight Saving Time','-4:00'),
+(17,'EEST Eastern Europe Summer Time','+3:00'),
+(18,'EET Eastern Europe Time','+2:00'),
+(19,'EST Eastern Standard Time','-5:00'),
+(20,'GMT Greenwich Mean Time','+00:00'),
+(21,'HST Hawaiian Standard Time','-10:00'),
+(22,'IST Indian Standard Time','+5:30'),
+(23,'IST Irish Summer Time','+1:00'),
+(24,'MDT Mountain Daylight Saving Time','-6:00'),
+(25,'MSD Moscow Summer Time','+4:00'),
+(26,'MSK Moscow Time','+3:00'),
+(27,'MST Mountain Standard Time','-7:00'),
+(28,'PDT Pacific Daylight Saving Time','-7:00'),
+(29,'PST Pacific Standard Time','-8:00'),
+(30,'WEST Western Europe Summer Time','+1:00'),
+(31,'WET Western Europe Time','+00:00');//@
+
+
 INSERT INTO "XXXXX".ai_filetype_output(id,fileType, outputType)
 VALUES (1,'rptdesign','rptdocument'),
 (2,'rptdesign','html'),
@@ -684,7 +719,4 @@ VALUES (1,1,'csv','Comma Seprated Value file'),
 SELECT SETVAL('ai_filetype_id_seq', (SELECT MAX(id) from ai_filetype));//@
 
 
-commit;//@
-
-SET search_path TO "$user", public;//@
 commit;//@

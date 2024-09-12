@@ -32,7 +32,7 @@ spring:
      enabled: true
      change-log: classpath:db/changelog/db.changelog-aiv.sql
    security:
-     enabled: false
+     enabled: true
      change-log: classpath:db/changelog/db.changelog-security.sql
 
 # This is normal logging if we missed anything
@@ -104,3 +104,6 @@ jiraAdminRoles: administrators,atlassian-addons-admin,site-admins,system-adminis
 # Temporary location
 general:
   location: ${aiv_base}/repository/Econfig
+
+management.metrics.mongo.command.enabled: false
+management.metrics.mongo.connectionpool.enabled: false
