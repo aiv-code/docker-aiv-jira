@@ -5,7 +5,8 @@
       "type": "string"
     },
     "issueId":{
-    	"type":"string"
+    	"type":"string",
+        "location": "paramvalue"
     },
     "author": {
       "type": "string",
