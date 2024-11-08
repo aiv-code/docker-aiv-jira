@@ -655,7 +655,8 @@ values (1,'REPORTS','/Documents/Reports'),
 (12,'ALERTS','/Data/Alerts'),
 (13,'MERGE','/Documents/Merge'),
 (14,'OLAP_ANALYTIC','/Dashboard/OlapAnalytics'),
-(15,'ADHOC','/Documents/Adhoc');//@
+(15,'ADHOC','/Documents/Adhoc'),
+(16,'APP','APP');//@
 
 SELECT SETVAL('ai_category_id_seq', (SELECT MAX(id) from ai_category));//@
 
@@ -714,7 +715,8 @@ VALUES (1,1,'csv','Comma Seprated Value file'),
 (39,1,'stash','Group Dataset'),
 (40,1,'dml','DML'),
 (41,1,'adhoc','ADHOC File'),
-(42,1,'aiv-xlsx','AIV XLSX');//@
+(42,1,'aiv-xlsx','AIV XLSX'),
+(43,1,'app','AIV');//@
 
 SELECT SETVAL('ai_filetype_id_seq', (SELECT MAX(id) from ai_filetype));//@
 
