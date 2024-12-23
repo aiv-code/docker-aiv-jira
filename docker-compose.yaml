@@ -29,7 +29,7 @@ services:
       - db
   aiv: 
     container_name: aiv
-    image: jits023/aiv-jira:6.0.0
+    image: jits023/aiv-jira:6.1.0
     entrypoint: ["/opt/init.sh"]  # ENTRYPOINT is set here
     command: []                   # CMD is set here (optional, to pass arguments)
     ports: 
@@ -58,7 +58,7 @@ services:
     restart: always
   aiv-ai: 
     container_name: aiv-ai
-    image: jits023/aiv-ai:6.0.0
+    image: jits023/aiv-ai:6.1.0
     ports: 
       - "8000:8000"
     environment:
