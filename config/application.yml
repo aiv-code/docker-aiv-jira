@@ -58,12 +58,14 @@ app:
   slatKey: 0123456789abcdef
   ivspec: fedcba9876543210
   imgLocation: ${aiv_base}/repository/images/
+  appLocation: ${aiv_base}/repository/APP/
   repositoryLocation: ${aiv_base}/repository
   logDir: ${aiv_base}/logs
   deliveryLocation: ${aiv_base}/repository/delivery
   database: postgresql
   securityClass: com.utility.JiraAuthImpl #com.simple.services.SimpleAuthImpl/com.utility.JiraAuthImpl
   isJira: true
+  noofreports: 10
   logs:
     jsonlogs: true
     showdept: true
@@ -84,6 +86,7 @@ aiv-internalToken: ActiveIntelligence
 external.db.1: jdbc,mysql,ClassicModels,true,java:comp/env/jdbc/classicmodels
 #external.db.2: olap,SampleData,mondrian.olap4j.MondrianOlap4jDriver,jdbc:mondrian:DataSource,D:/Repositories/AIV/tomcat/data/sampledata.mondrian.xml,true,org.hsqldb.jdbcDriver,java:comp/env/jdbc/SampleData
 
+jasper.connection: true,java:comp/env/jdbc/classicmodels
 
 #Jira realted configuration
 addon.base-url: ${addon_base_url}

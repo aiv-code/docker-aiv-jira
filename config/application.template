@@ -58,12 +58,14 @@ app:
   slatKey: 0123456789abcdef
   ivspec: fedcba9876543210
   imgLocation: ${aiv_base}/repository/images/
+  appLocation: ${aiv_base}/repository/APP/
   repositoryLocation: ${aiv_base}/repository
   logDir: ${aiv_base}/logs
   deliveryLocation: ${aiv_base}/repository/delivery
   database: postgresql
   securityClass: com.utility.JiraAuthImpl #com.simple.services.SimpleAuthImpl/com.utility.JiraAuthImpl
   isJira: true
+  noofreports: 10
   logs:
     jsonlogs: true
     showdept: true
@@ -104,6 +106,8 @@ jiraAdminRoles: administrators,atlassian-addons-admin,site-admins,system-adminis
 # Temporary location
 general:
   location: ${aiv_base}/repository/Econfig
+
+jasper.connection: true,java:comp/env/jdbc/classicmodels
 
 management.metrics.mongo.command.enabled: false
 management.metrics.mongo.connectionpool.enabled: false
