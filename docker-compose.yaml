@@ -1,8 +1,3 @@
-# Execute the following code to spin up the containers
-# docker compose up -d
-# Execute the following code to spin down the docker compose file:
-# docker compose down
-
 version: '3.8'
 
 services:
@@ -69,18 +64,6 @@ services:
     environment:
       - AIV_JUPYTER=aiv-jupyter
       - AIV_TOKEN=aivhub
-    depends_on:
-      - aiv-jupyter
     volumes:
       - "./dataloc/:/usr/local/temp/"
-    restart: always
-  aiv-jupyter: 
-    container_name: aiv-jupyter
-    image: jits023/aiv-jupyter:6.0.0
-    ports: 
-      - "8888:8888"
-    volumes:
-      - "./dataloc/:/usr/local/temp/"
-    environment:
-      - AIV_JUPYTER=aiv-jupyter
     restart: always
