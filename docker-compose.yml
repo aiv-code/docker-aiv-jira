@@ -30,8 +30,10 @@ services:
   aiv: 
     container_name: aiv
     image: jits023/aiv-jira:6.1.0
-    entrypoint: ["/opt/init.sh"]  # ENTRYPOINT is set here
-    command: []                   # CMD is set here (optional, to pass arguments)
+    command: >
+      /bin/bash -c "
+      jq --arg base_url \"$$addon_base_url\" 'walk(if type == \"string\" then gsub(\"\\$$addon_base_url\"; $$base_url) else . end)' /opt/repository/econfig/atlassian-template.json > /opt/repository/econfig/atlassian-connect.json &&
+      java --add-opens=java.base/java.nio=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED -Dspring.config.location=file:/opt/config/application.yml -Dloader.path=/opt/config/drivers -cp /opt/repository/econfig/:run.jar org.springframework.boot.loader.PropertiesLauncher"
     ports: 
       - "443:443"
     depends_on:

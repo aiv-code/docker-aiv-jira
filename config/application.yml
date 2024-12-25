@@ -58,7 +58,7 @@ app:
   slatKey: 0123456789abcdef
   ivspec: fedcba9876543210
   imgLocation: ${aiv_base}/repository/images/
-  appLocation: ${aiv_base}/repository/APP/
+  appLocation: ${aiv_base}/repository/app/
   repositoryLocation: ${aiv_base}/repository
   logDir: ${aiv_base}/logs
   deliveryLocation: ${aiv_base}/repository/delivery
