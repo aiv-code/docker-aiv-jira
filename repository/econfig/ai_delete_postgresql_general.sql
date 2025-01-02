@@ -47,5 +47,6 @@ DROP TABLE IF EXISTS "XXXXX".ai_datasource cascade;
 DROP TABLE IF EXISTS "XXXXX".ai_datasource_type cascade;
 DROP TABLE IF EXISTS "XXXXX".ai_time_scheduler_cron cascade;
 DROP TABLE IF EXISTS "XXXXX".ai_file_output cascade;
+DROP TABLE IF EXISTS "XXXXX".ai_apitoken cascade;
 DROP EXTENSION IF EXISTS intarray cascade;
 DROP SCHEMA IF EXISTS "XXXXX";

@@ -560,6 +560,19 @@ CREATE TABLE IF NOT EXISTS "XXXXX".ai_chathistory
 );//@
 
 
+CREATE TABLE IF NOT EXISTS "XXXXX".ai_apitoken
+(
+    id serial,
+    key character varying(255) DEFAULT NULL,
+    owner character varying(255) DEFAULT NULL,
+    department character varying(255) DEFAULT NULL,
+    lastused timestamp without time zone DEFAULT NULL,
+    name character varying(255) CDEFAULT NULL,
+    createddate timestamp without time zone DEFAULT NULL,
+    "time" character varying(255) DEFAULT NULL
+);//@
+
+
 insert into "XXXXX".ai_timezone values
 (1,'ACDT Australian Central Daylight Time','+10:30'),
 (2,'ACST Australian Central Standard Time','+9:30'),

@@ -49,6 +49,7 @@ DROP TABLE IF EXISTS "XXXXX".ai_datasource cascade;
 DROP TABLE IF EXISTS "XXXXX".ai_datasource_type cascade;
 DROP TABLE IF EXISTS "XXXXX".ai_time_scheduler_cron cascade;
 DROP TABLE IF EXISTS "XXXXX".ai_file_output cascade;
+DROP TABLE IF EXISTS "XXXXX".ai_apitoken cascade;
 DROP EXTENSION IF EXISTS intarray cascade;
 
 
@@ -176,6 +177,7 @@ CREATE TABLE "XXXXX".ai_user
   requestOption character varying(1) default '0',
   adminOption character varying(1) default '0',
   scheduleOption character varying(1) default '0',
+  webhookOption character varying(1) default '0',
   usertype character varying(255),
   default_dashboard character varying(255),
 landing_page character varying(255),
@@ -393,6 +395,7 @@ CREATE TABLE "XXXXX".ai_role
   requestOption character varying(1) default '0',
   adminOption character varying(1) default '0',
   scheduleOption character varying(1) default '0',
+  webhookOption character varying(1) default '0',
   department character varying(255),
   CONSTRAINT ai_role_pkey PRIMARY KEY (id),
   CONSTRAINT ai_role_name_key UNIQUE (name)
@@ -777,6 +780,18 @@ CREATE TABLE "XXXXX".ai_file_output (
  status character varying(45) DEFAULT NULL,
  CONSTRAINT ai_file_output_pkey PRIMARY KEY (id),
  CONSTRAINT ai_file_output_fileid_fkey FOREIGN KEY (fileid) REFERENCES "XXXXX".ai_fileandfolder(id)
+);
+
+CREATE TABLE IF NOT EXISTS "XXXXX".ai_apitoken
+(
+    id serial,
+    key character varying(255) DEFAULT NULL,
+    owner character varying(255) DEFAULT NULL,
+    department character varying(255) DEFAULT NULL,
+    lastused timestamp without time zone DEFAULT NULL,
+    name character varying(255) CDEFAULT NULL,
+    createddate timestamp without time zone DEFAULT NULL,
+    "time" character varying(255) DEFAULT NULL
 );
 
 CREATE EXTENSION intarray;
