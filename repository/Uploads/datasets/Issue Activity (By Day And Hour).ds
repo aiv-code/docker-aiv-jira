@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><DATASOURCE name="Jira_aivhub10_atlassian_net" sourcetype="jdbc" type="postgresql"><DATASET isStoredProc="false" name="Issue Activity (By Day And Hour)" type="NormalDataset"><QUERY>WITH hourly_activity AS (
+    -- Extract day of the week and hour of the day for each activity type
+    SELECT
+        DATE_PART('dow', created::timestamp) AS day_of_week, -- Day of the week (0 = Sunday, 1 = Monday, ...)
+        DATE_PART('hour', created::timestamp) AS hour_of_day,
+        'Created' AS activity_type,
+        COUNT(*) AS activity_count
+    FROM
+        aivhub10_atlassian_net.issues
+    WHERE
+        created IS NOT NULL
+    GROUP BY
+        day_of_week, hour_of_day
+
+    UNION ALL
+
+    SELECT
+        DATE_PART('dow', updated::timestamp) AS day_of_week,
+        DATE_PART('hour', updated::timestamp) AS hour_of_day,
+        'Updated' AS activity_type,
+        COUNT(*) AS activity_count
+    FROM
+        aivhub10_atlassian_net.issues
+    WHERE
+        updated IS NOT NULL
+    GROUP BY
+        day_of_week, hour_of_day
+
+    UNION ALL
+
+    SELECT
+        DATE_PART('dow', resolutiondate::timestamp) AS day_of_week,
+        DATE_PART('hour', resolutiondate::timestamp) AS hour_of_day,
+        'Resolved' AS activity_type,
+        COUNT(*) AS activity_count
+    FROM
+        aivhub10_atlassian_net.issues
+    WHERE
+        resolutiondate IS NOT NULL
+    GROUP BY
+        day_of_week, hour_of_day
+)
+SELECT
+
+(CASE (day_of_week)
+        WHEN 0 then 'Sunday' 
+        WHEN 1 then 'Monday'
+        WHEN 2 then 'Tuesday' 
+        WHEN 3 then 'Wednesday' 
+        WHEN 4 then 'Thursday' 
+        WHEN 5 then 'Friday' 
+        WHEN 6 then 'Saturday'
+    END) as dayofweek,
+    day_of_week,
+    hour_of_day,
+    activity_type,
+    SUM(activity_count) AS total_activity
+FROM
+    hourly_activity
+GROUP BY
+    day_of_week, hour_of_day, activity_type
+ORDER BY
+    day_of_week,  hour_of_day, activity_type;</QUERY><PARAMETERS/><METADATA>[{"updatedIndex":0,"isAutoIncremented":false,"colDbType":"text","alias":"dayofweek","index":0,"colSqlType":12,"type":"String","key":"dayofweek","tableName":"Issue Activity (By Day And Hour)","dtype":"String"},{"updatedIndex":1,"isAutoIncremented":false,"colDbType":"float8","alias":"day_of_week","index":1,"colSqlType":8,"type":"Double","key":"day_of_week","tableName":"Issue Activity (By Day And Hour)","dtype":"Double"},{"updatedIndex":2,"isAutoIncremented":false,"colDbType":"float8","alias":"hour_of_day","index":2,"colSqlType":8,"type":"Double","key":"hour_of_day","tableName":"Issue Activity (By Day And Hour)","dtype":"Double"},{"updatedIndex":3,"isAutoIncremented":false,"colDbType":"text","alias":"activity_type","index":3,"colSqlType":12,"type":"String","key":"activity_type","tableName":"Issue Activity (By Day And Hour)","dtype":"String"},{"updatedIndex":4,"isAutoIncremented":false,"colDbType":"numeric","alias":"total_activity","index":4,"colSqlType":2,"type":"BigDecimal","key":"total_activity","tableName":"Issue Activity (By Day And Hour)","dtype":"BigDecimal"}]</METADATA><CUSTOMMETADATA>[]</CUSTOMMETADATA><HIERARCHIES>{}</HIERARCHIES></DATASET></DATASOURCE>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><DATASOURCE name="Jira_aivhub10_atlassian_net" sourcetype="jdbc" type="postgresql"><DATASET isStoredProc="false" name="Task By Age" type="NormalDataset"><QUERY>WITH issue_aging AS (
+    -- Calculate the age of each issue
+    SELECT
+        i.key AS task_id,
+        i.summary,
+        u.displayname AS assignee, -- Assignee name
+        -- t.name AS team,     -- Team name (if available)
+        p.name AS priority, -- Priority name
+        ist.name AS status, -- Issue status
+        i.created::date AS created_date,
+        COALESCE(i.resolutiondate::date, NOW()::date) AS last_activity_date, -- Resolved or current date
+        EXTRACT(DAY FROM NOW()::timestamp - i.created::timestamp) AS age_in_days -- Days since created
+    FROM
+        aivhub10_atlassian_net.issues i
+    LEFT JOIN
+        aivhub10_atlassian_net.users u ON u.accountid = i.assignee
+    INNER JOIN
+        aivhub10_atlassian_net.issue_priorities p ON p.id = i.priority
+    INNER JOIN
+        aivhub10_atlassian_net.status ist ON ist.id = i.issuestatus
+    WHERE
+        ist.name NOT IN ('Done', 'Resolved') -- Exclude completed tasks
+)
+SELECT
+    priority,
+    COUNT(*) AS total_tasks,
+    ROUND(MAX(age_in_days),2) AS max_age_in_days, -- Longest task age
+    ROUND(AVG(age_in_days),2) AS avg_age_in_days  -- Average task age
+FROM
+    issue_aging
+GROUP BY
+     priority
+ORDER BY
+    max_age_in_days DESC, avg_age_in_days DESC;</QUERY><PARAMETERS/><METADATA>[{"updatedIndex":0,"isAutoIncremented":false,"colDbType":"varchar","alias":"priority","index":0,"colSqlType":12,"type":"String","key":"priority","tableName":"Task By Age","dtype":"String","ctype":""},{"updatedIndex":1,"isAutoIncremented":false,"colDbType":"int8","alias":"total_tasks","index":1,"colSqlType":-5,"type":"Long","key":"total_tasks","tableName":"Task By Age","dtype":"Long","ctype":""},{"updatedIndex":2,"isAutoIncremented":false,"colDbType":"numeric","alias":"max_age_in_days","index":2,"colSqlType":2,"type":"BigDecimal","key":"max_age_in_days","tableName":"Task By Age","dtype":"BigDecimal","ctype":""},{"updatedIndex":3,"isAutoIncremented":false,"colDbType":"numeric","alias":"avg_age_in_days","index":3,"colSqlType":2,"type":"BigDecimal","key":"avg_age_in_days","tableName":"Task By Age","dtype":"BigDecimal","ctype":""}]</METADATA><CUSTOMMETADATA>[]</CUSTOMMETADATA><HIERARCHIES>{}</HIERARCHIES></DATASET></DATASOURCE>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><DATASOURCE name="Jira_aivhub10_atlassian_net" sourcetype="jdbc" type="postgresql"><DATASET isStoredProc="false" name="Cycle Time Distribution" type="NormalDataset"><QUERY>WITH status_transitions AS (
+    -- Simulate transitions between statuses for tasks
+    SELECT
+        key AS task_id,
+        CASE
+            WHEN ist.name = 'To Do' THEN created::timestamp
+            WHEN ist.name = 'In Progress' THEN (created::timestamp + INTERVAL '2 days')
+            WHEN ist.name = 'QA Testing' THEN (created::timestamp + INTERVAL '5 days')
+            WHEN ist.name = 'Done' THEN updated::timestamp
+            ELSE NULL
+        END AS current_status_start_time,
+        ist.name AS status,
+  		ist.id AS statusid,
+	i.project
+    FROM
+        aivhub10_atlassian_net.issues i
+	inner join aivhub10_atlassian_net.status ist on ist.id = i.issuestatus
+),
+cycle_times AS (
+    -- Calculate cycle times based on simulated transitions
+    SELECT
+        task_id,
+        status,
+ 	 statusid,
+	project,
+        current_status_start_time,
+        LEAD(current_status_start_time) OVER (
+            PARTITION BY task_id ORDER BY current_status_start_time
+        ) AS next_status_start_time,
+        COALESCE(
+            LEAD(current_status_start_time) OVER (
+                PARTITION BY task_id ORDER BY current_status_start_time
+            ) - current_status_start_time,
+            NOW() - current_status_start_time
+        ) AS duration_in_status
+    FROM
+        status_transitions
+    WHERE
+        current_status_start_time IS NOT NULL
+),
+status_summary AS (
+    -- Aggregate results by status
+    SELECT
+        status,
+  		statusid,
+	project,
+        COUNT(*) AS task_count,
+        AVG(EXTRACT(EPOCH FROM duration_in_status) / 3600) AS avg_hours_in_status,
+        MIN(EXTRACT(EPOCH FROM duration_in_status) / 3600) AS min_hours_in_status,
+        MAX(EXTRACT(EPOCH FROM duration_in_status) / 3600) AS max_hours_in_status,
+        PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM duration_in_status) / 3600) AS median_hours_in_status
+    FROM
+        cycle_times
+    GROUP BY
+        status,
+	statusid,
+	project
+)
+SELECT
+    status AS workflow_status,
+    statusid,
+	project,
+    task_count,
+    ROUND(avg_hours_in_status, 2) AS avg_hours,
+    ROUND(min_hours_in_status, 2) AS min_hours,
+    ROUND(max_hours_in_status, 2) AS max_hours
+FROM
+    status_summary
+ORDER BY
+    statusid;
+</QUERY><PARAMETERS/><METADATA>[{"updatedIndex":0,"isAutoIncremented":false,"colDbType":"varchar","alias":"workflow_status","index":0,"colSqlType":12,"type":"String","key":"workflow_status","tableName":"Cycle Time Distribution","dtype":"String","ctype":""},{"updatedIndex":1,"isAutoIncremented":false,"colDbType":"varchar","alias":"statusid","index":1,"colSqlType":12,"type":"String","key":"statusid","tableName":"Cycle Time Distribution","dtype":"String","ctype":""},{"updatedIndex":2,"isAutoIncremented":false,"colDbType":"varchar","alias":"project","index":2,"colSqlType":12,"type":"String","key":"project","tableName":"Cycle Time Distribution","dtype":"String","ctype":""},{"updatedIndex":3,"isAutoIncremented":false,"colDbType":"int8","alias":"task_count","index":3,"colSqlType":-5,"type":"Long","key":"task_count","tableName":"Cycle Time Distribution","dtype":"Long","ctype":""},{"updatedIndex":4,"isAutoIncremented":false,"colDbType":"numeric","alias":"avg_hours","index":4,"colSqlType":2,"type":"BigDecimal","key":"avg_hours","tableName":"Cycle Time Distribution","dtype":"BigDecimal","ctype":""},{"updatedIndex":5,"isAutoIncremented":false,"colDbType":"numeric","alias":"min_hours","index":5,"colSqlType":2,"type":"BigDecimal","key":"min_hours","tableName":"Cycle Time Distribution","dtype":"BigDecimal","ctype":""},{"updatedIndex":6,"isAutoIncremented":false,"colDbType":"numeric","alias":"max_hours","index":6,"colSqlType":2,"type":"BigDecimal","key":"max_hours","tableName":"Cycle Time Distribution","dtype":"BigDecimal","ctype":""}]</METADATA><CUSTOMMETADATA>[]</CUSTOMMETADATA><HIERARCHIES>{}</HIERARCHIES></DATASET></DATASOURCE>

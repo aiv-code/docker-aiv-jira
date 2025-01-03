@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><DATASOURCE name="Jira_aivhub10_atlassian_net" sourcetype="jdbc" type="postgresql"><DATASET isStoredProc="false" name="Priority vs Progress Correlation" type="NormalDataset"><QUERY>WITH progress_data AS (
+    -- Calculate progress percentage based on status
+    SELECT
+        i.key AS task_id,
+        p.name AS priority, -- Priority name
+        CASE
+            WHEN ist.name = 'Done' THEN 100 -- Fully completed tasks
+            WHEN ist.name IN ('In Progress', 'QA Testing') THEN 50 -- Partially completed
+            WHEN ist.name = 'To Do' THEN 0 -- Not started
+            ELSE 0
+        END AS progress_percentage,
+        i.created::date AS created_date,
+        i.duedate::date AS due_date,
+		ist.name as progress,
+        DATE_PART('day', NOW() - i.created::timestamp) AS days_since_created
+    FROM
+        aivhub10_atlassian_net.issues i
+    INNER JOIN
+        aivhub10_atlassian_net.issue_priorities p ON p.id = i.priority
+    INNER JOIN
+        aivhub10_atlassian_net.status ist ON ist.id = i.issuestatus
+    WHERE
+        i.priority IS NOT NULL
+),
+priority_progress_summary AS (
+    -- Aggregate progress by priority
+    SELECT
+        priority,
+        COUNT(*) AS total_tickets,
+        AVG(progress_percentage) AS avg_progress_percentage,
+        MAX(progress_percentage) AS max_progress_percentage,
+        MIN(progress_percentage) AS min_progress_percentage
+    FROM
+        progress_data
+    GROUP BY
+        priority
+)
+-- Final Output
+SELECT
+    task_id,
+    priority,
+	progress,
+    progress_percentage,
+    created_date,
+    due_date,
+    days_since_created
+FROM
+    progress_data
+ORDER BY
+    priority, progress_percentage DESC;</QUERY><PARAMETERS/><METADATA>[{"updatedIndex":0,"isAutoIncremented":false,"colDbType":"varchar","alias":"task_id","index":0,"colSqlType":12,"type":"String","key":"task_id","tableName":"Priority vs Progress Correlation","dtype":"String"},{"updatedIndex":1,"isAutoIncremented":false,"colDbType":"varchar","alias":"priority","index":1,"colSqlType":12,"type":"String","key":"priority","tableName":"Priority vs Progress Correlation","dtype":"String"},{"updatedIndex":2,"isAutoIncremented":false,"colDbType":"varchar","alias":"progress","index":2,"colSqlType":12,"type":"String","key":"progress","tableName":"Priority vs Progress Correlation","dtype":"String"},{"updatedIndex":3,"isAutoIncremented":false,"colDbType":"int4","alias":"progress_percentage","index":3,"colSqlType":4,"type":"Integer","key":"progress_percentage","tableName":"Priority vs Progress Correlation","dtype":"Integer"},{"updatedIndex":4,"isAutoIncremented":false,"colDbType":"date","alias":"created_date","index":4,"colSqlType":91,"type":"Date","key":"created_date","tableName":"Priority vs Progress Correlation","dtype":"Date"},{"updatedIndex":5,"isAutoIncremented":false,"colDbType":"date","alias":"due_date","index":5,"colSqlType":91,"type":"Date","key":"due_date","tableName":"Priority vs Progress Correlation","dtype":"Date"},{"updatedIndex":6,"isAutoIncremented":false,"colDbType":"float8","alias":"days_since_created","index":6,"colSqlType":8,"type":"Double","key":"days_since_created","tableName":"Priority vs Progress Correlation","dtype":"Double"}]</METADATA><CUSTOMMETADATA>[]</CUSTOMMETADATA><HIERARCHIES>{}</HIERARCHIES></DATASET></DATASOURCE>
