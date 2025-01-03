@@ -1,55 +1,56 @@
-DROP SCHEMA IF EXISTS "XXXXX" CASCADE;
-CREATE SCHEMA IF NOT EXISTS "XXXXX" AUTHORIZATION postgres;
-DROP TABLE IF EXISTS "XXXXX".ai_embed cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_privilege cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_file_options cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_anot_privilege cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_lovrow_mapping cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_report_management cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_filefolder_output cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_alertSuccess cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_fileandfolder cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_category cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_privilege_template cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_user cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_event_request cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_event_mail cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_event cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_request_parameter cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_recurring_request cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_request_task cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_request cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_session cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_filetype cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_filetype_output cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_role cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_user_role cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_notification cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_parameter cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_quickrun_parameter cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_quickrun cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_ldap_user_role cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_audit cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_email_users cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_quicklink cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_dm cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_dm_detail cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_dm_applicable_area cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_dm_privilege cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_usertype_map cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_backupuser cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_im_comments cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_timezone cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_license cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_annotation cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_extdb_priv cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_external_db cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_department cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_datasource cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_datasource_type cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_time_scheduler_cron cascade;
-DROP TABLE IF EXISTS "XXXXX".ai_file_output cascade;
-DROP EXTENSION IF EXISTS intarray cascade;
+DROP SCHEMA IF EXISTS "XXXXX" CASCADE;//@
+CREATE SCHEMA IF NOT EXISTS "XXXXX" AUTHORIZATION postgres;//@
+DROP TABLE IF EXISTS "XXXXX".ai_embed cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_privilege cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_file_options cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_anot_privilege cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_lovrow_mapping cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_report_management cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_filefolder_output cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_alertSuccess cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_fileandfolder cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_category cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_privilege_template cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_user cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_event_request cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_event_mail cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_event cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_request_parameter cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_recurring_request cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_request_task cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_request cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_session cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_filetype cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_filetype_output cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_role cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_user_role cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_notification cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_parameter cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_quickrun_parameter cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_quickrun cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_ldap_user_role cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_audit cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_email_users cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_quicklink cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_dm cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_dm_detail cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_dm_applicable_area cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_dm_privilege cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_usertype_map cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_backupuser cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_im_comments cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_timezone cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_license cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_annotation cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_extdb_priv cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_external_db cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_department cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_datasource cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_datasource_type cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_time_scheduler_cron cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_file_output cascade;//@
+DROP TABLE IF EXISTS "XXXXX".ai_chathistory;//@
+DROP EXTENSION IF EXISTS intarray cascade;//@
 
 
 
@@ -59,7 +60,7 @@ CREATE TABLE "XXXXX".ai_category
   category character varying(50),
   folderpath character varying(255),
   CONSTRAINT ai_category_category_key UNIQUE (category)
-);
+);//@
 
 
 CREATE TABLE "XXXXX".ai_embed (
@@ -75,7 +76,7 @@ CREATE TABLE "XXXXX".ai_embed (
  department character varying(255) DEFAULT NULL,
  decryptionkey character varying(1000) DEFAULT NULL,
  CONSTRAINT ai_embed_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_fileandfolder
 (
@@ -100,7 +101,7 @@ CREATE TABLE "XXXXX".ai_fileandfolder
   ispurgeable integer DEFAULT 1,
   ispurged integer DEFAULT 0,
   CONSTRAINT ai_fileandfolder_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_privilege
 (
@@ -112,7 +113,7 @@ CREATE TABLE "XXXXX".ai_privilege
   canedit integer DEFAULT 0,
   CONSTRAINT ai_privilege_pkey PRIMARY KEY (id),
   CONSTRAINT ai_privilege_fileid_fkey FOREIGN KEY (fileid) REFERENCES "XXXXX".ai_fileandfolder (id) ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_file_options
 (
@@ -123,7 +124,7 @@ CREATE TABLE "XXXXX".ai_file_options
 	extra_info text DEFAULT '{}',
     CONSTRAINT ai_file_options_pkey PRIMARY KEY (id),
     CONSTRAINT ai_file_options_fileid_fkey FOREIGN KEY (fileid) REFERENCES "XXXXX".ai_fileandfolder (id) ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_anot_privilege
 (
@@ -135,7 +136,7 @@ CREATE TABLE "XXXXX".ai_anot_privilege
   owner character varying(255),
   privilege_value character varying(1) DEFAULT 0,
   CONSTRAINT ai_anot_privilege_pkey PRIMARY KEY (id)
-);
+);//@
 
 
 CREATE TABLE "XXXXX".ai_privilege_template
@@ -146,7 +147,7 @@ CREATE TABLE "XXXXX".ai_privilege_template
   status character varying(255),
   privilegevalue character varying(255),
   CONSTRAINT ai_privilege_template_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_user
 (
@@ -188,7 +189,7 @@ showname character varying(1) default '1',
 showimage character varying(1) default '1',
   CONSTRAINT ai_user_pkey PRIMARY KEY (id),
   CONSTRAINT ai_user_username_key UNIQUE (username)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_session
 (
@@ -200,14 +201,14 @@ CREATE TABLE "XXXXX".ai_session
   additionalsecurity character varying(255),
   clientsource character varying(255),
   CONSTRAINT ai_session_pkey PRIMARY KEY (id)
-);
+);//@
 
 
 CREATE TABLE "XXXXX".ai_department (
 id serial NOT NULL,
 deptName character varying(255),
 deptCode character varying(255)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_request
 (
@@ -280,7 +281,7 @@ CREATE TABLE "XXXXX".ai_request
   nextcreated character(1) DEFAULT 0,
   nbid integer default 0,
   CONSTRAINT ai_request_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_request_task
 (
@@ -295,7 +296,7 @@ CREATE TABLE "XXXXX".ai_request_task
   endtime timestamp without time zone,
   errorlog character varying(255),
   CONSTRAINT ai_request_task_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_notification
 (
@@ -314,7 +315,7 @@ CREATE TABLE "XXXXX".ai_notification
   approvalreport_outputid integer,
   sender character varying(255),
   CONSTRAINT ai_notification_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_recurring_request
 (
@@ -330,7 +331,7 @@ CREATE TABLE "XXXXX".ai_recurring_request
   nextruntime timestamp without time zone,
   lastruntime timestamp without time zone,
   CONSTRAINT ai_recurring_request_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_request_parameter
 (
@@ -343,7 +344,7 @@ CREATE TABLE "XXXXX".ai_request_parameter
   CONSTRAINT ai_request_parameter_requestid_fkey FOREIGN KEY (requestid)
       REFERENCES "XXXXX".ai_request (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_filetype
 (
@@ -354,14 +355,14 @@ CREATE TABLE "XXXXX".ai_filetype
   classname character varying(255),
   CONSTRAINT ai_filetype_pkey PRIMARY KEY (id),
   CONSTRAINT ai_filetype_filetype_key UNIQUE (filetype)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_filetype_output
 (
   id serial NOT NULL,
   filetype character varying(45),
   outputtype character varying(45)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_filefolder_output
 (
@@ -369,7 +370,7 @@ CREATE TABLE "XXXXX".ai_filefolder_output
   fileid integer,
   outputtype character varying(45),
   CONSTRAINT ai_filefolder_output_fileid_fkey FOREIGN KEY (fileid) REFERENCES "XXXXX".ai_fileandfolder (id) ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_role
 (
@@ -396,7 +397,7 @@ CREATE TABLE "XXXXX".ai_role
   department character varying(255),
   CONSTRAINT ai_role_pkey PRIMARY KEY (id),
   CONSTRAINT ai_role_name_key UNIQUE (name)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_user_role
 (
@@ -405,7 +406,7 @@ CREATE TABLE "XXXXX".ai_user_role
   roleName character varying(255),
   CONSTRAINT ai_user_role_pkey PRIMARY KEY (id),
   CONSTRAINT ai_user_role_ukey UNIQUE (userName,roleName)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_parameter
 (
@@ -428,7 +429,7 @@ CREATE TABLE "XXXXX".ai_parameter
   value_displaytext text,
   username character varying(255),
   CONSTRAINT ai_parameter_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_quickrun
 (
@@ -437,7 +438,7 @@ CREATE TABLE "XXXXX".ai_quickrun
   reportid integer,
   username character varying(255),
   CONSTRAINT ai_quickrun_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_quickrun_parameter
 (
@@ -450,7 +451,7 @@ CREATE TABLE "XXXXX".ai_quickrun_parameter
   CONSTRAINT ai_quickrun_parameter_quickrunid_fkey FOREIGN KEY (quickrunid)
       REFERENCES "XXXXX".ai_quickrun (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_audit
 (
@@ -464,7 +465,7 @@ CREATE TABLE "XXXXX".ai_audit
   oldvalues character varying(255),
   newvalues character varying(255),
   CONSTRAINT ai_audit_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_email_users(
 displayname character varying(255),
@@ -472,7 +473,7 @@ email character varying(255),
 status character varying(50),
 department character varying(255),
 CONSTRAINT ai_email_users_pkey PRIMARY KEY (email,department)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_ldap_user_role
 (
@@ -499,7 +500,7 @@ CREATE TABLE "XXXXX".ai_ldap_user_role
   adminOption character varying(1) default '0',
   scheduleOption character varying(1) default '0',
   CONSTRAINT ai_ldap_user_role_pkey PRIMARY KEY (user_role, user_rolename)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_quicklink
 (
@@ -511,7 +512,7 @@ CREATE TABLE "XXXXX".ai_quicklink
   shortcutkey character varying(255),
   CONSTRAINT ai_quicklink_pkey PRIMARY KEY (id),
   CONSTRAINT ai_quicklink_name_key UNIQUE (name)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_dm
 (
@@ -537,7 +538,7 @@ CREATE TABLE "XXXXX".ai_dm
   option9 character varying(255),
   option10 character varying(255),
   CONSTRAINT ai_dm_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_dm_applicable_area
 (
@@ -545,7 +546,7 @@ CREATE TABLE "XXXXX".ai_dm_applicable_area
   dm_id integer,
   applicableto_area character varying(255),
   applicableto_area_val character varying(255)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_dm_detail
 (
@@ -559,7 +560,7 @@ CREATE TABLE "XXXXX".ai_dm_detail
   owner_count integer,
   user_count integer,
   CONSTRAINT ai_dm_detail_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_dm_privilege
 (
@@ -569,14 +570,14 @@ CREATE TABLE "XXXXX".ai_dm_privilege
   user_rolename character varying(255),
   isacknowledged character varying(1) DEFAULT 0,
   CONSTRAINT ai_dm_privilege_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_usertype_map
 (
   id serial NOT NULL,
   usertype character varying(255),
   descriptionname character varying(255)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_backupuser
 (
@@ -586,7 +587,7 @@ CREATE TABLE "XXXXX".ai_backupuser
   startdate timestamp without time zone,
   enddate timestamp without time zone,
   CONSTRAINT ai_backupuser_username_pkey PRIMARY KEY (username)
-);
+);//@
 
 
 CREATE TABLE "XXXXX".ai_im_comments
@@ -597,7 +598,7 @@ CREATE TABLE "XXXXX".ai_im_comments
   owner_count integer,
   user_count integer,
   CONSTRAINT ai_im_comments_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_timezone
 (
@@ -605,7 +606,7 @@ CREATE TABLE "XXXXX".ai_timezone
   name character varying(50) NOT NULL,
   value character varying(10) DEFAULT NULL,
   CONSTRAINT ai_timezone_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_license
 (
@@ -621,7 +622,7 @@ CREATE TABLE "XXXXX".ai_license
   ulimit integer DEFAULT 0,
   token character varying(255) NOT NULL,
   CONSTRAINT ai_license_machine_name_key UNIQUE (machine_name)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_event(
 id serial NOT NULL,
@@ -632,7 +633,7 @@ owner character varying(255) DEFAULT NULL,
 email_templateId integer DEFAULT 0,
 CONSTRAINT ai_event_pkey PRIMARY KEY (id),
 CONSTRAINT ai_event_number UNIQUE (owner,event_number)
-);
+);//@
 
 
 CREATE TABLE "XXXXX".ai_event_request(
@@ -641,7 +642,7 @@ event_id integer,
 request_id integer,
 CONSTRAINT ai_event_request_eventid_fkey FOREIGN KEY (event_id) REFERENCES "XXXXX".ai_event (id) ON DELETE CASCADE,
 CONSTRAINT ai_event_request_requestid_fkey FOREIGN KEY (request_id) REFERENCES "XXXXX".ai_request (id) ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_event_mail(
 id serial NOT NULL,
@@ -649,13 +650,13 @@ event_id integer,
 entity character varying(10) NOT NULL,
 recipient text NOT NULL,
 CONSTRAINT ai_event_mail_id_fkey foreign key(event_id) REFERENCES "XXXXX".ai_event (id) ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_external_db(
 dbKey character varying(255),
 dbName character varying(255) NOT NULL,
 CONSTRAINT ai_extdb_pkey PRIMARY KEY (dbKey)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_extdb_priv(
 id serial NOT NULL,
@@ -663,7 +664,7 @@ dbKey character varying(255),
 privilegeType character varying(10) NOT NULL,
 user_roleName character varying(255) NOT NULL,
 CONSTRAINT ai_extdb_priv_fkey foreign key(dbKey) REFERENCES "XXXXX".ai_external_db (dbKey) ON DELETE CASCADE
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_annotation (
   id serial NOT NULL,
@@ -676,7 +677,7 @@ CREATE TABLE "XXXXX".ai_annotation (
   owner character varying(255),
   visibilityType character varying(255),
   CONSTRAINT ai_annotation_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_lovrow_mapping(
 id serial NOT NULL,
@@ -686,7 +687,7 @@ rowNo character varying(255) default NULL,
 owner character varying(255) NOT NULL,
 comments character varying(1000) default NULL,
 CONSTRAINT ai_lovrow_mapping_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_report_management(
 id serial NOT NULL,
@@ -703,7 +704,7 @@ comments character varying(1000) DEFAULT NULL,
 CONSTRAINT ai_report_management_pkey PRIMARY KEY (id),
 CONSTRAINT ai_report_management_lovId_fkey FOREIGN KEY (lovId) REFERENCES "XXXXX".ai_fileandfolder(id),
 CONSTRAINT ai_report_management_lovMappingId_fkey FOREIGN KEY (lovMappingId) REFERENCES "XXXXX".ai_fileandfolder(id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_datasource (
 id serial NOT NULL,
@@ -726,7 +727,7 @@ waitTime BIGINT DEFAULT NULL,
 department character varying(255),
 extra_info text DEFAULT '{}',
 CONSTRAINT ai_datasource_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_datasource_type (
 id serial NOT NULL,
@@ -735,7 +736,7 @@ type_database character varying(500),
 driver_class_name character varying(500),
 url character varying(1000),
 CONSTRAINT ai_datasource_type_pkey PRIMARY KEY (id)
-);
+);//@
 
 
 CREATE TABLE "XXXXX".ai_time_scheduler_cron (
@@ -753,7 +754,7 @@ CREATE TABLE "XXXXX".ai_time_scheduler_cron (
   server character varying(255) DEFAULT NULL,
   name character varying(45) DEFAULT NULL,
   CONSTRAINT ai_time_scheduler_cron_pkey PRIMARY KEY (id)
-);
+);//@
 
 CREATE TABLE "XXXXX".ai_alertSuccess
    (	id serial NOT NULL,
@@ -767,7 +768,7 @@ CREATE TABLE "XXXXX".ai_alertSuccess
 	valOne character varying(1000),
 	valTwo character varying(1000),
 	CONSTRAINT ai_alertSuccess_pkey PRIMARY KEY (id)
-	);
+	);//@
 
 
 CREATE TABLE "XXXXX".ai_file_output (
@@ -777,9 +778,23 @@ CREATE TABLE "XXXXX".ai_file_output (
  status character varying(45) DEFAULT NULL,
  CONSTRAINT ai_file_output_pkey PRIMARY KEY (id),
  CONSTRAINT ai_file_output_fileid_fkey FOREIGN KEY (fileid) REFERENCES "XXXXX".ai_fileandfolder(id)
-);
+);//@
 
-CREATE EXTENSION intarray;
+
+CREATE TABLE IF NOT EXISTS "XXXXX".ai_chathistory
+(
+    id bigserial NOT NULL,
+    threadname character varying(255),
+    recordtime timestamp without time zone,
+    history text,
+    username character varying(255),
+    type character varying(255),
+    threadid character varying(255),
+    fileid integer,
+    CONSTRAINT ai_chathistory_pkey PRIMARY KEY (id)
+);//@
+
+CREATE EXTENSION intarray;//@
 
 insert into "XXXXX".ai_category(id,category,folderPath)
 values (1,'REPORTS','/Documents/Reports'),
@@ -796,9 +811,9 @@ values (1,'REPORTS','/Documents/Reports'),
 (12,'ALERTS','/Data/Alerts'),
 (13,'MERGE','/Documents/Merge'),
 (14,'OLAP_ANALYTIC','/Dashboard/OlapAnalytics'),
-(15,'ADHOC','/Documents/Adhoc');
+(15,'ADHOC','/Documents/Adhoc');//@
 
-SELECT SETVAL('"XXXXX".ai_category_id_seq', (SELECT MAX(id) from "XXXXX".ai_category));
+SELECT SETVAL('"XXXXX".ai_category_id_seq', (SELECT MAX(id) from "XXXXX".ai_category));//@
 
 INSERT INTO "XXXXX".ai_filetype(id,isOutputType,fileType,longDescription)
 VALUES (1,1,'csv','Comma Seprated Value file'),
@@ -842,9 +857,9 @@ VALUES (1,1,'csv','Comma Seprated Value file'),
 (39,1,'stash','Group Dataset'),
 (40,1,'dml','DML'),
 (41,1,'adhoc','ADHOC File'),
-(42,1,'aiv-xlsx','AIV XLSX');
+(42,1,'aiv-xlsx','AIV XLSX');//@
 
-SELECT SETVAL('"XXXXX".ai_filetype_id_seq', (SELECT MAX(id) from "XXXXX".ai_filetype));
+SELECT SETVAL('"XXXXX".ai_filetype_id_seq', (SELECT MAX(id) from "XXXXX".ai_filetype));//@
 
 INSERT INTO "XXXXX".ai_filetype_output(id,fileType, outputType)
 VALUES (1,'rptdesign','rptdocument'),
@@ -878,16 +893,16 @@ VALUES (1,'rptdesign','rptdocument'),
 (29,'report','pdf'),
 (30,'rptdesign','pptx'),
 (31,'ipynb','pdf'),
-(32,'rptdesign','aiv-xlsx');
+(32,'rptdesign','aiv-xlsx');//@
 
-SELECT SETVAL('"XXXXX".ai_filetype_output_id_seq', (SELECT MAX(id) from "XXXXX".ai_filetype_output));
+SELECT SETVAL('"XXXXX".ai_filetype_output_id_seq', (SELECT MAX(id) from "XXXXX".ai_filetype_output));//@
 
 INSERT INTO  "XXXXX".ai_usertype_map(id,userType,descriptionName)
 values
 (1,'INT','Advanced User'),
-(2,'EXT','End User');
+(2,'EXT','End User');//@
 
-SELECT SETVAL('"XXXXX".ai_usertype_map_id_seq', (SELECT MAX(id) from "XXXXX".ai_usertype_map));
+SELECT SETVAL('"XXXXX".ai_usertype_map_id_seq', (SELECT MAX(id) from "XXXXX".ai_usertype_map));//@
 
 insert into "XXXXX".ai_timezone values
 (1,'ACDT Australian Central Daylight Time','+10:30'),
@@ -920,41 +935,41 @@ insert into "XXXXX".ai_timezone values
 (28,'PDT Pacific Daylight Saving Time','-7:00'),
 (29,'PST Pacific Standard Time','-8:00'),
 (30,'WEST Western Europe Summer Time','+1:00'),
-(31,'WET Western Europe Time','+00:00');
+(31,'WET Western Europe Time','+00:00');//@
 
-SELECT SETVAL('"XXXXX".ai_timezone_id_seq', (SELECT MAX(id) from "XXXXX".ai_timezone));
+SELECT SETVAL('"XXXXX".ai_timezone_id_seq', (SELECT MAX(id) from "XXXXX".ai_timezone));//@
 
 insert into "XXXXX".ai_user values
 (1,'admin',NULL,'admin','Active','8989899D2C314FF543657C44BF8EAB10',NULL,'/admin','2','0',2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,'INT','47|:|Solution Dashboard|:|admin','Visualization/GridDashboard','en','SYSTEM','Default','0','XXXXX'),
-(2,'Paul','Smith','demo','Active','8989899D2C314FF543657C44BF8EAB10','Paul@aivhub.com','/demo','1','0',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'INT',NULL,'Documents/Reports','en','SYSTEM','Default','0','XXXXX');
+(2,'Paul','Smith','demo','Active','8989899D2C314FF543657C44BF8EAB10','Paul@aivhub.com','/demo','1','0',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'INT',NULL,'Documents/Reports','en','SYSTEM','Default','0','XXXXX');//@
 
-SELECT SETVAL('"XXXXX".ai_user_id_seq', (SELECT MAX(id) from "XXXXX".ai_user));
+SELECT SETVAL('"XXXXX".ai_user_id_seq', (SELECT MAX(id) from "XXXXX".ai_user));//@
 
 insert into "XXXXX".ai_role values
 (1,'administrator','administrator Role','admin-a@aivhub.com',2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,'XXXXX'),
-(2,'Sales','Sales Role','support@aivhub.com',1,1,1,1,2,0,1,1,1,0,0,2,1,1,0,2,'XXXXX');
+(2,'Sales','Sales Role','support@aivhub.com',1,1,1,1,2,0,1,1,1,0,0,2,1,1,0,2,'XXXXX');//@
 
-SELECT SETVAL('"XXXXX".ai_role_id_seq', (SELECT MAX(id) from "XXXXX".ai_role));
+SELECT SETVAL('"XXXXX".ai_role_id_seq', (SELECT MAX(id) from "XXXXX".ai_role));//@
 
 insert into "XXXXX".ai_user_role values
 (1,'demo','Sales'),
-(2,'admin','administrator');
+(2,'admin','administrator');//@
 
-SELECT SETVAL('"XXXXX".ai_user_role_id_seq', (SELECT MAX(id) from "XXXXX".ai_user_role));
+SELECT SETVAL('"XXXXX".ai_user_role_id_seq', (SELECT MAX(id) from "XXXXX".ai_user_role));//@
 
 insert into "XXXXX".ai_dm (id,type,subject,description,owner,visibility,active,start_date,end_date,created_on,lastupdated_on,option1,option2,option3,option4,option5,option6,option7,option8,option9,option10) values
 (1,'RATING','Welcome to Adhoc Reports','<p><span>Adhoc Reports/Edit Reports</span><span> will help you to add report and also make changes in existing report to create customize reports.</span></p><p>Rate on the Prescribed Scale about Your Experience working on adhoc Reports.</p>','admin','PUB','ACTIVE',null,null,now(),now(),'1','2','3','4','5',null,null,null,null,null),
 (2,'FEEDBACK','Welcome to List of Values','<p><span>List of values</span><span> is a list that containing the data values associated with an object.</span></p><p><span>Share With us your Feedback regarding the Features in list of values.</span></p>','admin','PUB','ACTIVE',null,null,now(),now(),'Least Important','Important','Most Important',null,null,null,null,null,null,null),
-(3,'RATING','Welcome to Annotations','<p><span>Annotations </span><span>are critical or explanatory notes added to a text, image or other data. They are references that point to the specific part of data.</span></p><p>Rate on the Prescribed Scale about Your Experience working on Annotations.</p>','admin','PUB','ACTIVE',null,null,now(),now(),'1','2','3','4','5',null,null,null,null,null);
+(3,'RATING','Welcome to Annotations','<p><span>Annotations </span><span>are critical or explanatory notes added to a text, image or other data. They are references that point to the specific part of data.</span></p><p>Rate on the Prescribed Scale about Your Experience working on Annotations.</p>','admin','PUB','ACTIVE',null,null,now(),now(),'1','2','3','4','5',null,null,null,null,null);//@
 
-SELECT SETVAL('"XXXXX".ai_dm_id_seq', (SELECT MAX(id) from "XXXXX".ai_dm));
+SELECT SETVAL('"XXXXX".ai_dm_id_seq', (SELECT MAX(id) from "XXXXX".ai_dm));//@
 
 insert into "XXXXX".ai_dm_applicable_area (dm_id,applicableto_area,applicableto_area_val) values
 (1,'SECTION','EDITREPORT'),
 (2,'SECTION','LISTOFVALUES'),
-(3,'SECTION','ANNOTATIONS');
+(3,'SECTION','ANNOTATIONS');//@
 
-SELECT SETVAL('"XXXXX".ai_dm_applicable_area_id_seq', (SELECT MAX(id) from "XXXXX".ai_dm_applicable_area));
+SELECT SETVAL('"XXXXX".ai_dm_applicable_area_id_seq', (SELECT MAX(id) from "XXXXX".ai_dm_applicable_area));//@
 
 insert into "XXXXX".ai_dm_privilege (id,dm_id,privilegetype,user_rolename,isacknowledged) values
 (1,1,'USER','admin',0),
@@ -962,9 +977,9 @@ insert into "XXXXX".ai_dm_privilege (id,dm_id,privilegetype,user_rolename,isackn
 (3,2,'USER','admin',0),
 (4,2,'USER','demo',0),
 (5,3,'USER','admin',0),
-(6,3,'USER','demo',0);
+(6,3,'USER','demo',0);//@
 
-SELECT SETVAL('"XXXXX".ai_dm_privilege_id_seq', (SELECT MAX(id) from "XXXXX".ai_dm_privilege));
+SELECT SETVAL('"XXXXX".ai_dm_privilege_id_seq', (SELECT MAX(id) from "XXXXX".ai_dm_privilege));//@
 
 Insert into "XXXXX".ai_fileandfolder (id,description,owner,rootfolder,category,path,name,type,versionno,visibilitytype,visible,createdby,createdon,isdefault,lastupdatedon,lastupdatedby,isarchivable,isarchived,ispurgeable,ispurged) values
 (1,'Documents parent folder','demo','/demo',null,'/','Documents','folder',1,'PVT',1,'demo',now(),'1',now(),'demo',0,0,0,0),
@@ -1065,21 +1080,21 @@ Insert into "XXXXX".ai_fileandfolder (id,description,owner,rootfolder,category,p
 (99,null,'admin',null,'DATASETS','/','Logistic','cds',1,'PUB',1,'admin',now(),'1',now(),'admin',1,0,1,0),
 (100,null,'admin',null,'DATASETS','/','Education','cds',1,'PUB',1,'admin',now(),'1',now(),'admin',1,0,1,0),
 (101,null,'admin',null,'DATASETS','/','Healthcare','cds',1,'PUB',1,'admin',now(),'1',now(),'admin',1,0,1,0),
-(102,null,'admin',null,'DATASETS','/','Energies & Utilities','cds',1,'PUB',1,'admin',now(),'1',now(),'admin',1,0,1,0);
+(102,null,'admin',null,'DATASETS','/','Energies & Utilities','cds',1,'PUB',1,'admin',now(),'1',now(),'admin',1,0,1,0);//@
 
- SELECT SETVAL('"XXXXX".ai_fileandfolder_id_seq', (SELECT MAX(id) from "XXXXX".ai_fileandfolder));
+ SELECT SETVAL('"XXXXX".ai_fileandfolder_id_seq', (SELECT MAX(id) from "XXXXX".ai_fileandfolder));//@
 
 
- insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (1,'Group1','<p><strong>Dear User,</strong></p><p><strong>&nbsp;</strong></p><h3><strong>We are very excited to introduce </strong><span style="color: rgb(255, 194, 102);">Active Intelligence Visualization 5</span><strong> </strong><strong style="color: blue;">(AIV)</strong></h3><p><strong>&nbsp;</strong></p><p class="ql-align-justify"><strong>AIV 5 enable the user to analyze data and present actionable insights to help corporate executives, business managers and other end-users to make informed business decisions.</strong></p><p class="ql-align-justify"><strong>&nbsp;</strong></p><p class="ql-align-justify"><strong>AIV encompasses a variety of tools, applications and methodologies that enable organizations to collect data from internal systems and external sources, prepare it for analysis.&nbsp;You can develop and run queries against the data, create pixel-perfect reports and dashboards to make the analytical results available to corporate decision-makers and distribute &amp; share the report and analytics to internal users, partners and even the outside users in different file formats, such as Excel, PDF, PPT, and many more.</strong></p><h3 class="ql-align-justify"><br></h3><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p class="ql-align-justify"><a href="https://aivhub.com/" rel="noopener noreferrer" target="_blank">Visit AIV</a></p><h3 class="ql-align-justify"><br></h3>','Announcement Messages',NULL,NULL,'Announcement Messages','admin','PVT');
- insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (2,'Product Launch','<p><strong style=\"color: rgb(51, 51, 51);\">Dear User,</strong></p><p><strong style=\"color: rgb(51, 51, 51);\">&nbsp;</strong></p><h3><strong style=\"color: rgb(51, 51, 51);\">We are very excited to introduce Active Intelligence Visualization 5 </strong><strong style=\"color: blue;\">(AIV)</strong></h3><p><strong style=\"color: rgb(51, 51, 51);\">&nbsp;</strong></p><p class=\"ql-align-justify\"><strong style=\"color: rgb(51, 51, 51);\">AIV 5 enable the user to analyze data and present actionable insights to help corporate executives, business managers and other end-users to make informed business decisions.</strong></p><p class=\"ql-align-justify\"><strong style=\"color: rgb(51, 51, 51);\">&nbsp;</strong></p><p class=\"ql-align-justify\"><strong style=\"color: rgb(51, 51, 51);\">AIV encompasses a variety of tools, applications and methodologies that enable organizations to collect data from internal systems and external sources, prepare it for analysis.&nbsp;You can develop and run queries against the data, create pixel-perfect reports and dashboards to make the analytical results available to corporate decision-makers and distribute &amp; share the report and analytics to internal users, partners and even the outside users in different file formats, such as Excel, PDF, PPT, and many more.</strong></p><h3 class=\"ql-align-justify\"><br></h3><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p class=\"ql-align-justify\"><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank">Visit AIV</a></p>','Product announcements new launch',NULL,NULL,'Announcement Messages','admin','PVT');
+ insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (1,'Group1','<p><strong>Dear User,</strong></p><p><strong>&nbsp;</strong></p><h3><strong>We are very excited to introduce </strong><span style="color: rgb(255, 194, 102);">Active Intelligence Visualization 5</span><strong> </strong><strong style="color: blue;">(AIV)</strong></h3><p><strong>&nbsp;</strong></p><p class="ql-align-justify"><strong>AIV 5 enable the user to analyze data and present actionable insights to help corporate executives, business managers and other end-users to make informed business decisions.</strong></p><p class="ql-align-justify"><strong>&nbsp;</strong></p><p class="ql-align-justify"><strong>AIV encompasses a variety of tools, applications and methodologies that enable organizations to collect data from internal systems and external sources, prepare it for analysis.&nbsp;You can develop and run queries against the data, create pixel-perfect reports and dashboards to make the analytical results available to corporate decision-makers and distribute &amp; share the report and analytics to internal users, partners and even the outside users in different file formats, such as Excel, PDF, PPT, and many more.</strong></p><h3 class="ql-align-justify"><br></h3><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p class="ql-align-justify"><a href="https://aivhub.com/" rel="noopener noreferrer" target="_blank">Visit AIV</a></p><h3 class="ql-align-justify"><br></h3>','Announcement Messages',NULL,NULL,'Announcement Messages','admin','PVT');//@
+ insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (2,'Product Launch','<p><strong style=\"color: rgb(51, 51, 51);\">Dear User,</strong></p><p><strong style=\"color: rgb(51, 51, 51);\">&nbsp;</strong></p><h3><strong style=\"color: rgb(51, 51, 51);\">We are very excited to introduce Active Intelligence Visualization 5 </strong><strong style=\"color: blue;\">(AIV)</strong></h3><p><strong style=\"color: rgb(51, 51, 51);\">&nbsp;</strong></p><p class=\"ql-align-justify\"><strong style=\"color: rgb(51, 51, 51);\">AIV 5 enable the user to analyze data and present actionable insights to help corporate executives, business managers and other end-users to make informed business decisions.</strong></p><p class=\"ql-align-justify\"><strong style=\"color: rgb(51, 51, 51);\">&nbsp;</strong></p><p class=\"ql-align-justify\"><strong style=\"color: rgb(51, 51, 51);\">AIV encompasses a variety of tools, applications and methodologies that enable organizations to collect data from internal systems and external sources, prepare it for analysis.&nbsp;You can develop and run queries against the data, create pixel-perfect reports and dashboards to make the analytical results available to corporate decision-makers and distribute &amp; share the report and analytics to internal users, partners and even the outside users in different file formats, such as Excel, PDF, PPT, and many more.</strong></p><h3 class=\"ql-align-justify\"><br></h3><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p class=\"ql-align-justify\"><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank">Visit AIV</a></p>','Product announcements new launch',NULL,NULL,'Announcement Messages','admin','PVT');//@
 
-insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (3,'Product Features','<h3><span style=\"color: rgb(51, 51, 51);\">Dear User,</span></h3><h3><span style=\"color: rgb(51, 51, 51);\">&nbsp;</span></h3><h3><span style=\"color: rgb(51, 51, 51);\">This is a product feature announcement message, here is a glimpse of high-level features, you can find plenty of videos on how to use specific features video by visiting the AIV </span><a href="https://www.youtube.com/channel/UCDHSBsTPITUgosWkI8LGH8w" rel=\"noopener noreferrer\" target="_blank" style=\"color: rgb(5, 99, 193);\">YouTube channel</a><span style=\"color: rgb(51, 51, 51);\">.</span></h3><h3><span style=\"color: rgb(51, 51, 51);\">&nbsp;</span></h3><ul><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pixel-perfect reports</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ad-hoc report/analysis</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web component</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom visualization</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support for BIRT, Jaspersoft, and Pentaho community report designer</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Annotation</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scheduling and distributions of reports and dashboard</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Embedding</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SSO/OAuth/SAML support</li><li class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active Directory support, and much more</li></ul><h4><br></h4><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p class=\"ql-align-justify\"><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank">Visit AIV</a></p>','Product Features',NULL,NULL,'Announcement Messages','admin','PVT');
-insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (4,'Group2','<h4><strong>Dear Customer,</strong></h4><h4> </h4><h4 style=\"text-align: justify;\"><span style=\"color: #808080;\"><strong>Thank you for being our valued customers. We are grateful for the pleasure of serving you and meeting your reporting needs.</strong></span></h4><div><span style=\"color: #808080;\"><strong><br></strong></span></div><h4><span style=\"color: #808080;\"><strong>This is sample group <span style=\"color: #ff6600;\">annotation message</span>. You can create a customize message for specific client.</strong></span></h4><h4><strong>&nbsp;</strong></h4><h4><strong>Active Intelligence Team</strong></h4>','Client Messages',NULL,NULL,'Client Messages','admin','PVT');
-insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (5,'Group3','<p><em style=\"background-color: rgb(255, 255, 255);\">This is an example of </em><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 102, 0);\"><em>disclaimer annotation messages</em></strong><em style=\"background-color: rgb(255, 255, 255);\">.</em></p><p><br></p><p>This report contains confidential information and is intended solely for the individual to whom it is addressed. </p>','Disclaimer',NULL,NULL,'Disclaimer','admin','PVT');
-insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (6,'User-1','<h4><strong style=\"color: gray;\"><em>This is a sample group </em></strong><strong style="color: blue;"><em>annotation message.</em></strong><strong style=\"color: gray;\"><em> You can create a customized message for a specific client.</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>&nbsp;</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>Dear User-1,</em></strong></h4><h4><em style=\"color: rgb(51, 51, 51);\">&nbsp;</em></h4><h4 class=\"ql-align-justify\"><strong style=\"color: gray;\"><em>Thank you for being our valued customers. You can create and use this kind of annotation messages which can be customized for different customers to serve individual customer needs and personalized to each of your client/partners and internal users.</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>&nbsp;</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank">Visit AIV</a></p><h4><br></h4>','Client Messages - User 1',NULL,NULL,'Client Messages','admin','PVT');
-insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (7,'User-2','<h4><strong style=\"color: gray;\"><em>This is a sample group </em></strong><strong style="color: rgb(102, 185, 102);"><em><u style=\"background-color: rgb(255, 255, 255);\">annotation message</u></em></strong><strong style=\"color: blue;\"><em>.</em></strong><strong style=\"color: gray;\"><em> You can create a customized message for a specific client.</em></strong></h4><h4><strong><em>&nbsp;</em></strong></h4><h4><strong><em>Dear User-2,</em></strong></h4><h4><em>&nbsp;</em></h4><h4 class=\"ql-align-justify\"><strong style=\"color: gray;\"><em>Thank you for being our valued customers. You can create and use this kind of annotation messages which can be customized for different customers to serve individual customer needs and personalized to each of your client/partners and internal users.</em></strong></h4><h4><strong><em>&nbsp;</em></strong></h4><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank" style=\"background-color: rgb(255, 255, 255);\">Visit AIV</a></p><h4><br></h4><h4><br></h4>','Client Messages - User 2',NULL,NULL,'Client Messages','admin','PVT');
+insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (3,'Product Features','<h3><span style=\"color: rgb(51, 51, 51);\">Dear User,</span></h3><h3><span style=\"color: rgb(51, 51, 51);\">&nbsp;</span></h3><h3><span style=\"color: rgb(51, 51, 51);\">This is a product feature announcement message, here is a glimpse of high-level features, you can find plenty of videos on how to use specific features video by visiting the AIV </span><a href="https://www.youtube.com/channel/UCDHSBsTPITUgosWkI8LGH8w" rel=\"noopener noreferrer\" target="_blank" style=\"color: rgb(5, 99, 193);\">YouTube channel</a><span style=\"color: rgb(51, 51, 51);\">.</span></h3><h3><span style=\"color: rgb(51, 51, 51);\">&nbsp;</span></h3><ul><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pixel-perfect reports</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ad-hoc report/analysis</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web component</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom visualization</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support for BIRT, Jaspersoft, and Pentaho community report designer</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Annotation</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scheduling and distributions of reports and dashboard</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Embedding</li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SSO/OAuth/SAML support</li><li class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active Directory support, and much more</li></ul><h4><br></h4><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p class=\"ql-align-justify\"><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank">Visit AIV</a></p>','Product Features',NULL,NULL,'Announcement Messages','admin','PVT');//@
+insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (4,'Group2','<h4><strong>Dear Customer,</strong></h4><h4> </h4><h4 style=\"text-align: justify;\"><span style=\"color: #808080;\"><strong>Thank you for being our valued customers. We are grateful for the pleasure of serving you and meeting your reporting needs.</strong></span></h4><div><span style=\"color: #808080;\"><strong><br></strong></span></div><h4><span style=\"color: #808080;\"><strong>This is sample group <span style=\"color: #ff6600;\">annotation message</span>. You can create a customize message for specific client.</strong></span></h4><h4><strong>&nbsp;</strong></h4><h4><strong>Active Intelligence Team</strong></h4>','Client Messages',NULL,NULL,'Client Messages','admin','PVT');//@
+insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (5,'Group3','<p><em style=\"background-color: rgb(255, 255, 255);\">This is an example of </em><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 102, 0);\"><em>disclaimer annotation messages</em></strong><em style=\"background-color: rgb(255, 255, 255);\">.</em></p><p><br></p><p>This report contains confidential information and is intended solely for the individual to whom it is addressed. </p>','Disclaimer',NULL,NULL,'Disclaimer','admin','PVT');//@
+insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (6,'User-1','<h4><strong style=\"color: gray;\"><em>This is a sample group </em></strong><strong style="color: blue;"><em>annotation message.</em></strong><strong style=\"color: gray;\"><em> You can create a customized message for a specific client.</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>&nbsp;</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>Dear User-1,</em></strong></h4><h4><em style=\"color: rgb(51, 51, 51);\">&nbsp;</em></h4><h4 class=\"ql-align-justify\"><strong style=\"color: gray;\"><em>Thank you for being our valued customers. You can create and use this kind of annotation messages which can be customized for different customers to serve individual customer needs and personalized to each of your client/partners and internal users.</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>&nbsp;</em></strong></h4><h4><strong style=\"color: rgb(51, 51, 51);\"><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank">Visit AIV</a></p><h4><br></h4>','Client Messages - User 1',NULL,NULL,'Client Messages','admin','PVT');//@
+insert into "XXXXX".ai_annotation (id,annotationkey,description,shortdescription,startdate,enddate,groupname,owner,visibilitytype) values (7,'User-2','<h4><strong style=\"color: gray;\"><em>This is a sample group </em></strong><strong style="color: rgb(102, 185, 102);"><em><u style=\"background-color: rgb(255, 255, 255);\">annotation message</u></em></strong><strong style=\"color: blue;\"><em>.</em></strong><strong style=\"color: gray;\"><em> You can create a customized message for a specific client.</em></strong></h4><h4><strong><em>&nbsp;</em></strong></h4><h4><strong><em>Dear User-2,</em></strong></h4><h4><em>&nbsp;</em></h4><h4 class=\"ql-align-justify\"><strong style=\"color: gray;\"><em>Thank you for being our valued customers. You can create and use this kind of annotation messages which can be customized for different customers to serve individual customer needs and personalized to each of your client/partners and internal users.</em></strong></h4><h4><strong><em>&nbsp;</em></strong></h4><h4><strong><em>Active Intelligence Visualization Team</em></strong></h4><p><br></p><p><a href="https://aivhub.com" rel=\"noopener noreferrer\" target="_blank" style=\"background-color: rgb(255, 255, 255);\">Visit AIV</a></p><h4><br></h4><h4><br></h4>','Client Messages - User 2',NULL,NULL,'Client Messages','admin','PVT');//@
 
-SELECT SETVAL('"XXXXX".ai_annotation_id_seq', (SELECT MAX(id) from "XXXXX".ai_annotation));
+SELECT SETVAL('"XXXXX".ai_annotation_id_seq', (SELECT MAX(id) from "XXXXX".ai_annotation));//@
 
 Insert into "XXXXX".ai_audit (id,resourceid,resourcetype,actiontype,username,starttime,comments,oldvalues,newvalues) values
 (1,'1','FILE','CREATE','demo',now(),'Folder created',NULL,NULL),
@@ -1228,16 +1243,16 @@ Insert into "XXXXX".ai_audit (id,resourceid,resourcetype,actiontype,username,sta
 (150,'93','FILE','CREATE','admin',now(),'Folder created',NULL,NULL),
 (151,'94','FILE','UPLOAD','admin',now(),'File uploaded.',NULL,NULL),
 (152,'95','FILE','UPLOAD','admin',now(),'File uploaded.',NULL,NULL),
-(153,'96','FILE','UPLOAD','admin',now(),'File uploaded.',NULL,NULL);
+(153,'96','FILE','UPLOAD','admin',now(),'File uploaded.',NULL,NULL);//@
 
- SELECT SETVAL('"XXXXX".ai_audit_id_seq', (SELECT MAX(id) from "XXXXX".ai_audit));
+ SELECT SETVAL('"XXXXX".ai_audit_id_seq', (SELECT MAX(id) from "XXXXX".ai_audit));//@
 
-insert into "XXXXX".ai_filefolder_output(fileid,outputtype) values (49,'pdf');
+insert into "XXXXX".ai_filefolder_output(fileid,outputtype) values (49,'pdf');//@
 
 insert into "XXXXX".ai_parameter(id,name,datatype,format,displayname,displaytype,defaultvalue,defaultvaluetype,helptext,isvisible,isrequired,filterby,filtercondition,linkedparam,datasetid,datasetcolumnname,value_displaytext,username) values
-(1,'All Country','String','custom','All Country','ListBox',null,'DYNAMIC',null,1,1,'None',null,'None',40,'country','country','admin');
+(1,'All Country','String','custom','All Country','ListBox',null,'DYNAMIC',null,1,1,'None',null,'None',40,'country','country','admin');//@
 
-SELECT SETVAL('"XXXXX".ai_parameter_id_seq', (SELECT MAX(id) from "XXXXX".ai_parameter));
+SELECT SETVAL('"XXXXX".ai_parameter_id_seq', (SELECT MAX(id) from "XXXXX".ai_parameter));//@
 
 insert into "XXXXX".ai_privilege(id,fileid,privilegetype,user_rolename,privilegevalue) values
 (1,37,'ROLE','Sales',NULL),
@@ -1261,9 +1276,9 @@ insert into "XXXXX".ai_privilege(id,fileid,privilegetype,user_rolename,privilege
 (20,56,'ROLE','Sales',NULL),
 (23,86,'ROLE','Sales',NULL),
 (24,88,'ROLE','Sales',NULL),
-(25,89,'ROLE','Sales',NULL);
+(25,89,'ROLE','Sales',NULL);//@
 
-SELECT SETVAL('"XXXXX".ai_privilege_id_seq', (SELECT MAX(id) from "XXXXX".ai_privilege));
+SELECT SETVAL('"XXXXX".ai_privilege_id_seq', (SELECT MAX(id) from "XXXXX".ai_privilege));//@
 
 INSERT INTO "XXXXX".ai_datasource_type(id, protocol, type_database,driver_class_name,url)
 VALUES (1,'jdbc','mysql','com.mysql.jdbc.Driver','jdbc:mysql://<hostname>:<port>/<dbname>'),
@@ -1274,21 +1289,21 @@ VALUES (1,'jdbc','mysql','com.mysql.jdbc.Driver','jdbc:mysql://<hostname>:<port>
 (6,'olap','mssqlcube',NULL,NULL),
 (7,'olap','hsqldb','org.hsqldb.jdbcDriver','java:comp/env/jdbc/SampleData'),
 (8,'nosql','mongodb','mongodb.jdbc.MongoDriver','mongodb://<servername>:<port>/<databaseName>'),
-(9,'nosql','hive','org.apache.hive.jdbc.HiveDriver','jdbc:hive2://<hostname>:<port>/<db>');
+(9,'nosql','hive','org.apache.hive.jdbc.HiveDriver','jdbc:hive2://<hostname>:<port>/<db>');//@
 
-SELECT SETVAL('"XXXXX".ai_datasource_type_id_seq', (SELECT MAX(id) from "XXXXX".ai_datasource_type));
+SELECT SETVAL('"XXXXX".ai_datasource_type_id_seq', (SELECT MAX(id) from "XXXXX".ai_datasource_type));//@
 
 INSERT INTO "XXXXX".ai_lovrow_mapping(id,lovId,mapId,rowNo,owner,comments)
 VALUES (1,44,86,'0','admin',null),
 (2,44,86,'1','admin',null),
-(3,44,86,'2','admin',null);
+(3,44,86,'2','admin',null);//@
 
-SELECT SETVAL('"XXXXX".ai_lovrow_mapping_id_seq', (SELECT MAX(id) from "XXXXX".ai_lovrow_mapping));
+SELECT SETVAL('"XXXXX".ai_lovrow_mapping_id_seq', (SELECT MAX(id) from "XXXXX".ai_lovrow_mapping));//@
 
 
 INSERT INTO "XXXXX".ai_department(id,deptName,deptCode)
-VALUES (1,'Default','XXXXX');
+VALUES (1,'Default','XXXXX');//@
 
-SELECT SETVAL('"XXXXX".ai_department_id_seq', (SELECT MAX(id) from "XXXXX".ai_department));
+SELECT SETVAL('"XXXXX".ai_department_id_seq', (SELECT MAX(id) from "XXXXX".ai_department));//@
 
-commit;
+commit;//@

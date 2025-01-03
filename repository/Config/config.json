@@ -207,33 +207,39 @@
             "required":true,
             "type":"text",
             "placeholder":""
-         },
-    {
-      "name" : "aikey",
-      "displayName" : "Open AI Key",
-      "defaultValue" : "",
-      "required" : false,
-      "type" : "text",
-      "placeholder" : ""
-    }, {
-      "name" : "aitoken",
-      "displayName" : "Open AI Token",
-      "defaultValue" : "1000",
-      "required" : false,
-      "type" : "text",
-      "placeholder" : ""
-    }, {
-      "name" : "aiengine",
-      "displayName" : "Open AI Engine",
-      "defaultValue" : "gpt-3.5-turbo",
-      "required" : false,
-      "type" : "text",
-      "placeholder" : ""
-    }  
+         }, {
+            "name" : "embedToken",
+            "displayName" : "Is Embed Token",
+            "defaultValue" : true,
+            "type" : "text",
+            "placeholder" : ""
+         }, {
+            "name" : "aikey",
+            "displayName" : "Open AI Key",
+            "defaultValue" : "",
+            "required" : false,
+            "type" : "text",
+            "placeholder" : ""
+         }, {
+            "name" : "aitoken",
+            "displayName" : "Open AI Token",
+            "defaultValue" : "1000",
+            "required" : false,
+            "type" : "text",
+            "placeholder" : ""
+         }, {
+            "name" : "aiengine",
+            "displayName" : "Open AI Engine",
+            "defaultValue" : "gpt-3.5-turbo",
+            "required" : false,
+            "type" : "text",
+            "placeholder" : ""
+         }
       ]
    },
    "cluster":{
       "checked":false,
+      "tempChecked": false,
       "description":"AIV Clustering",
       "properties":[
          {
@@ -303,6 +309,7 @@
    },
    "email":{
       "checked":false,
+      "tempChecked": false,
       "description":"Email Configuration",
       "properties":[
          {
