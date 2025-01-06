@@ -215,21 +215,21 @@
             "placeholder" : ""
          }, {
             "name" : "aikey",
-            "displayName" : "Open AI Key",
+            "displayName" : "AI Key",
             "defaultValue" : "",
             "required" : false,
             "type" : "text",
             "placeholder" : ""
          }, {
             "name" : "aitoken",
-            "displayName" : "Open AI Token",
+            "displayName" : "AI Token",
             "defaultValue" : "1000",
             "required" : false,
             "type" : "text",
             "placeholder" : ""
          }, {
             "name" : "aiengine",
-            "displayName" : "Open AI Engine",
+            "displayName" : "AI Engine",
             "defaultValue" : "gpt-3.5-turbo",
             "required" : false,
             "type" : "text",
