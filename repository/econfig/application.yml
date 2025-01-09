@@ -1,0 +1,81 @@
+server:
+  servlet:
+    context-path: /aiv
+  port: ${aiv_port}
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+  resources:
+    static-locations: classpath:/static/,file:///${aiv_base}/repository/images/
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+  datasource:
+    url: ${aiv_db_url} # database for aiv schema
+    username: ${aiv_db_user}
+    password: ${aiv_db_password} 
+    driverClassName: org.postgresql.Driver
+  datasource1:
+    url: ${security_db_url} # database for security schema
+    username: ${security_db_user}
+    password: ${security_db_password} 
+    driverClassName: org.postgresql.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  jpa:
+    hibernate: 
+      ddl-auto: update
+  liquibase:
+   aiv:
+     enabled: true
+     change-log: classpath:db/changelog/db.changelog-aiv.sql
+   security:
+     enabled: true
+     change-log: classpath:db/changelog/db.changelog-security.sql
+
+#For JNDI Datasources
+datasources:
+  dslist[0]: '{"jndi-name":"jdbc/ActiveIDB","driver-class-name":"org.postgresql.Driver","url":"${aiv_db_url}","username":"${aiv_db_user}","password":"${aiv_db_password}"}'
+
+#Application some default values
+# slatKey -> For stoken decryption SecretKey
+# ivspec -> For stoken Iv Spec Key
+# securityClass -> which security class we need to use for authentication and user/roles details
+# isJira -> Are we using Jira authentication or not
+app:
+  slatKey: 0123456789abcdef
+  ivspec: fedcba9876543210
+  imgLocation: ${aiv_base}/repository/images/
+  appLocation: ${aiv_base}/repository/APP/
+  repositoryLocation: ${aiv_base}/repository
+  logDir: ${aiv_base}/logs
+  deliveryLocation: ${aiv_base}/repository/delivery
+  database: postgresql
+  securityClass: com.security.services.SimpleAuthImpl #com.simple.services.SimpleAuthImpl/com.utility.JiraAuthImpl
+  isJira: false
+  noofreports: 10
+
+#While creating Embed token
+# ekey -> Generating Embed Encrypted insternal token.
+# tokenKey -> For generating Embed authentication token
+embed:
+  ekey: ActiveInteigence
+  tokenKey: H0WWWrNDCCoVKVPXMSei9/+rDJcLbgkEOXhayw790lY=
+  iscustomtoken: false
+  
+logging:
+  level:
+    liquibase: OFF
+  
+# Token used for MicroServices Internal Authentication 
+aiv-internalToken: ActiveIntelligence
+management.metrics.mongo.command.enabled: false
+management.metrics.mongo.connectionpool.enabled: false
+
+jasper.connection: true,java:comp/env/jdbc/classicmodels
+# Default Jndi connnection Datasources
+# external.db.1: jdbc,mysql,ClassicModels,true,java:comp/env/jdbc/classicmodels
+#external.db.2: olap,SampleData,mondrian.olap4j.MondrianOlap4jDriver,jdbc:mondrian:DataSource,D:/Repositories/AIV/tomcat/data/sampledata.mondrian.xml,true,org.hsqldb.jdbcDriver,java:comp/env/jdbc/SampleData
