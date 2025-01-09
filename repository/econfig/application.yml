@@ -54,8 +54,8 @@ app:
   logDir: ${aiv_base}/logs
   deliveryLocation: ${aiv_base}/repository/delivery
   database: postgresql
-  securityClass: com.security.services.SimpleAuthImpl #com.simple.services.SimpleAuthImpl/com.utility.JiraAuthImpl
-  isJira: false
+  securityClass: com.aivhub.utility.JiraAuthImpl #com.simple.services.SimpleAuthImpl/com.utility.JiraAuthImpl
+  isJira: true
   noofreports: 10
 
 #While creating Embed token
@@ -79,3 +79,19 @@ jasper.connection: true,java:comp/env/jdbc/classicmodels
 # Default Jndi connnection Datasources
 # external.db.1: jdbc,mysql,ClassicModels,true,java:comp/env/jdbc/classicmodels
 #external.db.2: olap,SampleData,mondrian.olap4j.MondrianOlap4jDriver,jdbc:mondrian:DataSource,D:/Repositories/AIV/tomcat/data/sampledata.mondrian.xml,true,org.hsqldb.jdbcDriver,java:comp/env/jdbc/SampleData
+
+#Jira realted configuration
+addon.base-url: ${addon_base_url}
+com.atlassian.jira.clickjacking.protection.disabled: true
+jira.security.csp.sandbox.disabled: true
+logging.level.com.atlassian.connect.spring: DEBUG
+atlassian.connect.require-auth-include-paths: /v5/ #jpa:  #properties: #hibernate: # default_schema: Default
+com.atlassian.jira.clickjacking.protection.exclude: /execute_adhoc_report
+atlassian_url: ${atlassian_url}
+jira.driver-class-name: org.postgresql.Driver
+jira.url: ${jira_db_url}
+jira.username: ${jira_db_user}
+jira.password: ${jira_db_password}
+jira.type_database: postgresql
+jira.protocol: jdbc
+jiraAdminRoles: administrators,atlassian-addons-admin,site-admins,system-administrators,org-admins
