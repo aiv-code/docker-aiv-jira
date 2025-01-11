@@ -1,0 +1,26 @@
+  {
+  "key": "AIVNode",
+  "baseUrl": "https://f950-90-152-2-6.ngrok-free.app",
+  "name": "AIVNode-JIRA",
+  "authentication": {
+    "type": "jwt"
+  },
+  "scopes": ["READ","WRITE","ACT_AS_USER","admin"],
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled",
+    "enabled": "/enabled"
+  }, "modules": {
+  
+  
+  "generalPages": [
+    {
+      "key": "atlaskit-page-jira",
+      "location": "system.top.navigation.bar",
+      "name": {
+        "value": "AIVNode"
+      },
+      "url": "/aiv/index.html"
+    }]
+}
+}

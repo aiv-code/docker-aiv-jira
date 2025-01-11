@@ -1,0 +1,12 @@
+{
+    "development": {
+      "host": "https://f950-90-152-2-6.ngrok-free.app",
+      "port": 3000,
+      "baseUrl": "https://<your instance name>.atlassian.net"
+    },
+    "production": {
+      "host": "${HOST}",
+      "port": "${PORT}",
+      "baseUrl": "${BACKEND_URL}"
+    }
+  }

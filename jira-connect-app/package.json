@@ -1,0 +1,26 @@
+{
+    "name": "jira-connect-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "atlassian-connect-express": "^11.4.1",
+        "axios": "^1.7.9",
+        "body-parser": "^1.20.3",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "jira-connect-app": "file:",
+        "jsonwebtoken": "^9.0.2",
+        "path": "^0.12.7",
+        "sqlite3": "^5.1.7",
+        "winston": "^3.17.0",
+        "winston-daily-rotate-file": "^5.0.0"
+    }
+}

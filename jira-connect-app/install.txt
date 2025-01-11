@@ -1,0 +1,16 @@
+# Express and related middleware
+npm install express body-parser path
+
+# Atlassian Connect Express (ACE)
+npm install atlassian-connect-express
+
+# JSON Web Token (JWT) handling
+npm install jsonwebtoken
+
+# HTTP client for making requests
+npm install axios
+
+# Winston for logging
+npm install winston winston-daily-rotate-file
+
+npm install sqlite3
