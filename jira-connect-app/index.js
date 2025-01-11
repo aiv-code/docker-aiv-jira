@@ -5,8 +5,11 @@ const ace = require('atlassian-connect-express');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const winston = require('winston');
+const https = require('https');
+const fs = require('fs');
 require('winston-daily-rotate-file');
 require('dotenv').config();
+
 
 
 const app = express();
@@ -47,6 +50,13 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/aiv', express.static(path.join(__dirname, 'public')));
+
+
+// Load .pem files
+const options = {
+  key: fs.readFileSync('${process.env.private}'), // Path to your private key
+  cert: fs.readFileSync('${process.env.cert}') // Path to your certificate
+};
 
 const jwtStore = new Map();
 
@@ -385,6 +395,11 @@ function getBaseUrl(clientKey) {
 
 // Start the server
 const port = addon.config.port();
-app.listen(port, () => {
-  console.log(`App running on port ${port}`);
+//app.listen(port, () => {
+//  console.log(`App running on port ${port}`);
+//});
+
+https.createServer(options, app).listen(port, () => {
+  console.log(`App is running on https://localhost:${port}`);
 });
+
