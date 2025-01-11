@@ -14,3 +14,4 @@ npm install axios
 npm install winston winston-daily-rotate-file
 
 npm install sqlite3
+npm install dotenv
