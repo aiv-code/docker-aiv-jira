@@ -52,11 +52,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/aiv', express.static(path.join(__dirname, 'public')));
 
 
-// Load .pem files
-const options = {
-  key: fs.readFileSync('${process.env.private}'), // Path to your private key
-  cert: fs.readFileSync('${process.env.cert}') // Path to your certificate
-};
+// Uncomment to Load .pem files
+//const options = {
+//  key: fs.readFileSync('${process.env.private}'), // Path to your private key
+//  cert: fs.readFileSync('${process.env.cert}') // Path to your certificate
+//};
 
 const jwtStore = new Map();
 
@@ -395,11 +395,12 @@ function getBaseUrl(clientKey) {
 
 // Start the server
 const port = addon.config.port();
-//app.listen(port, () => {
-//  console.log(`App running on port ${port}`);
-//});
-
-https.createServer(options, app).listen(port, () => {
-  console.log(`App is running on https://localhost:${port}`);
+app.listen(port, () => {
+  console.log(`App running on port ${port}`);
 });
+
+//uncomment to load in https
+//https.createServer(options, app).listen(port, () => {
+//  console.log(`App is running on https://localhost:${port}`);
+//});
 
