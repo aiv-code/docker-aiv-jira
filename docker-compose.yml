@@ -46,11 +46,11 @@ services:
       /bin/bash -c "
       java --add-opens=java.base/java.nio=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED -Dspring.config.location=file:/opt/repository/econfig/application.yml -Dloader.path=/opt/config/drivers -cp /opt/repository/econfig/:run.jar org.springframework.boot.loader.PropertiesLauncher"
     ports: 
-      - "443:443"
+      - "8082:8082"
     depends_on:
       - db
     environment:
-      aiv_port: 443
+      aiv_port: 8082
       aiv_base: /opt
       aiv_db_url: jdbc:postgresql://db:5432/postgres
       aiv_db_user: ${AIV_DB_USER}
