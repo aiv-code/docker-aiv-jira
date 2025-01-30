@@ -1,6 +1,18 @@
 version: '3.8'
 
 services:
+ app:
+    container_name: jirapp
+    build:
+      context: ./jira-connect-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./jira-connect-app:/opt
+    environment:
+      NODE_ENV: development
+    command: bash -c "npm install && node index.js"
+
   db:
     container_name: postgres
     restart: always
