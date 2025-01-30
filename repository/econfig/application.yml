@@ -57,6 +57,12 @@ app:
   securityClass: com.aivhub.utility.JiraAuthImpl #com.simple.services.SimpleAuthImpl/com.utility.JiraAuthImpl
   isJira: true
   noofreports: 10
+  nodeurl: no
+  logs:
+    jsonlogs: false
+    showdept: true
+    showtraceid: true
+
 
 #While creating Embed token
 # ekey -> Generating Embed Encrypted insternal token.
