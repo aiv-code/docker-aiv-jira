@@ -76,7 +76,7 @@
          {
             "name":"kernel_ip",
             "displayName":"Kernel IP",
-            "defaultValue":"http://aiv-ai:8000",
+            "defaultValue":"http://aiv-ai:8001",
             "type":"text",
             "placeholder":""
          },
