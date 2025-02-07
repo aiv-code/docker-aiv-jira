@@ -73,7 +73,7 @@ services:
     container_name: aiv-ai
     image: jits023/aiv-ai:6.1.0
     ports: 
-      - "8000:8000"
+      - "8001:8001"
     environment:
       - AIV_JUPYTER=aiv-jupyter
       - AIV_TOKEN=aivhub
